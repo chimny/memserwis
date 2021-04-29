@@ -1,21 +1,47 @@
 import {Mem} from "./Mem";
 
 const memeTitleRegular = [
-    "mem1",
-    "mem2",
-    "mem3",
-    "mem4",
-    "mem5",
-    "mem6",
-    "mem7",
-    "mem8",
-    "mem9",
-    "mem10",
-    "mem11",
+    {
+        name: "mem1",
+        upVote: 0,
+        downVote: 0,
+        id: "A",
+    },
+    {
+        name: "mem2",
+        upVote: 0,
+        downVote: 0,
+        id: "B",
+    },
+    {
+        name: "mem3",
+        upVote: 0,
+        downVote: 0,
+        id: "C",
+    },
+    {
+        name: "mem4",
+        upVote: 0,
+        downVote: 0,
+        id: "D",
+    },
 ];
 
+const upVoteHandler = (index) => {
+    return console.log(memeTitleRegular[index].id);
+};
+
 const memDisplayfunction = (array) => {
-    return array.map((element) => <Mem title={element} />);
+    return array.map((element, index) => (
+        <Mem
+            title={element.name}
+            upVote={element.upVote}
+            downVote={element.downVote}
+            upVoteHandler={upVoteHandler()}
+            key={element.id}
+            // index={index}
+        />
+    ));
 };
 
 export const Regular = () => {
