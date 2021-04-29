@@ -28,7 +28,8 @@ const memeTitleRegular = [
 ];
 
 const upVoteHandler = (index) => {
-    return console.log(memeTitleRegular[index].id);
+    // return console.log(memeTitleRegular[index].id);
+    return console.log("ok");
 };
 
 const memDisplayfunction = (array) => {
@@ -39,7 +40,7 @@ const memDisplayfunction = (array) => {
             downVote={element.downVote}
             upVoteHandler={upVoteHandler()}
             key={element.id}
-            // index={index}
+            index={index}
         />
     ));
 };
