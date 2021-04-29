@@ -12,11 +12,11 @@ function App() {
                 <div>
                     <nav>
                         <ul>
-                            <li>
+                            {/* <li>
                                 <Link exact to="/">
                                     Home
                                 </Link>
-                            </li>
+                            </li> */}
                             <li>
                                 <Link to="/Regular">Regular</Link>
                             </li>
@@ -29,9 +29,9 @@ function App() {
                     {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
                     <Switch>
-                        <Route exact to path="/">
+                        {/* <Route exact to path="/">
                             <p>strona glowna</p>
-                        </Route>
+                        </Route> */}
                         <Route path="/Regular">
                             <Regular />
                         </Route>

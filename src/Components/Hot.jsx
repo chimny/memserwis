@@ -1,3 +1,3 @@
 export const Hot = () => {
-    return <p>ok</p>;
+    return <p>Hot</p>;
 };
