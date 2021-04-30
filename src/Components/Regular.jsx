@@ -1,3 +1,4 @@
+import {useState} from "react";
 import {Mem} from "./Mem";
 
 const memeTitleRegular = [
@@ -27,9 +28,9 @@ const memeTitleRegular = [
     },
 ];
 
-const upVoteHandler = (index) => {
-    // return console.log(memeTitleRegular[index].id);
-    return console.log("ok");
+// odpala się od razu funkcja, do sprawdzenia
+const upVoteHandler = (array, index) => {
+    return console.log(array[index].upVote);
 };
 
 const memDisplayfunction = (array) => {
@@ -38,13 +39,16 @@ const memDisplayfunction = (array) => {
             title={element.name}
             upVote={element.upVote}
             downVote={element.downVote}
-            upVoteHandler={upVoteHandler()}
+            upVoteHandler={upVoteHandler}
             key={element.id}
             index={index}
+            array={memeTitleRegular}
         />
     ));
 };
 
 export const Regular = () => {
+    // // tbc
+    // const [mems, setMems] = useState(null);
     return <>{memDisplayfunction(memeTitleRegular)}</>;
 };

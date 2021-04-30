@@ -1,13 +1,15 @@
 export const Mem = (props) => {
+    const {title, upVote, downVote, array, index, upVoteHandler} = props;
+
     return (
         <>
-            <p>{props.title}</p>
+            <p>{title}</p>
             <div>
-                Liczba upVote : {props.upVote}
-                Liczba downVote : {props.downVote}
+                Liczba upVote : {upVote}
+                Liczba downVote : {downVote}
             </div>
             <div>
-                <button onClick={() => props.upVoteHandler(props.index)}>
+                <button onClick={() => upVoteHandler(array, index)}>
                     UpVote
                 </button>
                 <button>DownVote</button>
