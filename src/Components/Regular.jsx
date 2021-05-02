@@ -2,10 +2,10 @@ import {useState} from "react";
 import {Mem} from "./Mem";
 
 // odpala się od razu funkcja, do sprawdzenia
-const upVoteHandler = (array, index) => {
-    return console.log(array[index].upVote);
-};
-
+// const upVoteHandler = (array, index) => {
+//     return console.log(array[index].upVote);
+// };
+// component start
 export const Regular = () => {
     const [memeTitleRegular, setMemeTitleRegular] = useState([
         {
@@ -14,30 +14,19 @@ export const Regular = () => {
             downVote: 0,
             id: "A",
         },
-        {
-            name: "mem2",
-            upVote: 0,
-            downVote: 0,
-            id: "B",
-        },
-        {
-            name: "mem3",
-            upVote: 0,
-            downVote: 0,
-            id: "C",
-        },
-        {
-            name: "mem4",
-            upVote: 0,
-            downVote: 0,
-            id: "D",
-        },
     ]);
 
     // odpala się od razu funkcja, do sprawdzenia
-    const upVoteHandler = (array, index) => {
-        setMemeTitleRegular((prevState) => {
-            return {...prevState};
+    // const upVoteHandler = (array, index) => {
+    //     setMemeTitleRegular((prevState) => {
+    //         return {...prevState};
+    //     });
+    // };
+
+    const upVoteHandler = () => {
+        return setMemeTitleRegular((prevState) => {
+            return [...prevState];
+            // , upVote:{...prevState.upVote, upVote: prevState.upVote+1}
         });
     };
 
@@ -54,7 +43,31 @@ export const Regular = () => {
             />
         ));
     };
-    // // tbc
-    // const [mems, setMems] = useState(null);
+
     return <>{memDisplayfunction(memeTitleRegular)}</>;
 };
+
+/* const memObj =  {
+    name: "mem1",
+    upVote: 0,
+    downVote: 0,
+    id: "A",
+},
+{
+    name: "mem2",
+    upVote: 0,
+    downVote: 0,
+    id: "B",
+},
+{
+    name: "mem3",
+    upVote: 0,
+    downVote: 0,
+    id: "C",
+},
+{
+    name: "mem4",
+    upVote: 0,
+    downVote: 0,
+    id: "D",
+} */
