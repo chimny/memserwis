@@ -20,7 +20,7 @@ export const Regular = () => {
         return setMemeTitleRegular((prevState) => {
             let result = [...prevState];
             result[0].upVote += 1;
-            return [...result];
+            return result;
         });
     };
 
