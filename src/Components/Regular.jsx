@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Mem} from "./Mem";
 
 // component start
@@ -25,6 +25,10 @@ export const Regular = () => {
             return [...prevState];
         });
     };
+
+    useEffect(() => {
+        return memDisplayfunction(memeTitleRegular);
+    }, [memeTitleRegular]);
 
     const memDisplayfunction = (array) => {
         return array.map((element, index) => (
