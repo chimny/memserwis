@@ -24,11 +24,11 @@ export const Regular = () => {
     //     });
     // };
 
-    const upVoteHandler = () => {
+    const upVoteHandler = (index) => {
         return setMemeTitleRegular((prevState) => {
-            return {
-                ...prevState,
-            };
+            let initialArray = [...prevState];
+            initialArray[index].upVote++;
+            return initialArray;
         });
     };
 
