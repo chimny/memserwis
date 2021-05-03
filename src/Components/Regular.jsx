@@ -1,4 +1,4 @@
-import {useState, useEffect} from "react";
+import {useState} from "react";
 import {Mem} from "./Mem";
 
 // odpala się od razu funkcja, do sprawdzenia
@@ -18,9 +18,9 @@ export const Regular = () => {
 
     const upVoteHandler = () => {
         return setMemeTitleRegular((prevState) => {
-            // result[0].upVote++;
-            // console.log(prevState[0].upVote++);
-            return [...prevState][0].upVote++;
+            let result = [...prevState];
+            result[0].upVote += 1;
+            return result;
         });
     };
 
@@ -37,10 +37,6 @@ export const Regular = () => {
             />
         ));
     };
-
-    useEffect(() => {
-        memDisplayfunction(memeTitleRegular);
-    }, [memeTitleRegular]);
 
     return <>{memDisplayfunction(memeTitleRegular)}</>;
 };
