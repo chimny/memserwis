@@ -9,7 +9,8 @@ export const Mem = (props) => {
                 Liczba downVote : {downVote}
             </div>
             <div>
-                <button onClick={() => upVoteHandler(array, index)}>
+                <button onClick={upVoteHandler}>
+                    {/* <button onClick={() => upVoteHandler(array, index)}> */}
                     UpVote
                 </button>
                 <button>DownVote</button>
