@@ -14,12 +14,19 @@ export const Regular = () => {
             downVote: 0,
             id: "A",
         },
+        {
+            name: "mem2",
+            upVote: 0,
+            downVote: 0,
+            id: "B",
+        },
     ]);
 
-    const upVoteHandler = () => {
+    const upVoteHandler = (index) => {
         return setMemeTitleRegular((prevState) => {
             let result = [...prevState];
-            result[0].upVote += 1;
+            result[index].upVote += 1;
+            debugger;
             return result;
         });
     };
@@ -33,7 +40,6 @@ export const Regular = () => {
                 upVoteHandler={upVoteHandler}
                 key={element.id}
                 index={index}
-                array={memeTitleRegular}
             />
         ));
     };
