@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Mem} from "./Mem";
 
 // odpala się od razu funkcja, do sprawdzenia
@@ -16,11 +16,19 @@ export const Regular = () => {
         },
     ]);
 
+    // const upVoteHandler = () => {
+    //     return setMemeTitleRegular((prevState) => {
+    //         const newState = [...prevState, (upVote: 2)];
+
+    //         return newState;
+    //     });
+    // };
+
     const upVoteHandler = () => {
         return setMemeTitleRegular((prevState) => {
-            let result = [...prevState];
-            result[0].upVote += 1;
-            return result;
+            return {
+                ...prevState,
+            };
         });
     };
 
