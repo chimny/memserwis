@@ -18,10 +18,9 @@ export const Regular = () => {
 
     const upVoteHandler = () => {
         return setMemeTitleRegular((prevState) => {
-            // let result = [...prevState];
             // result[0].upVote++;
-            console.log(prevState[0].upVote++);
-            return [...prevState];
+            // console.log(prevState[0].upVote++);
+            return [...prevState][0].upVote++;
         });
     };
 
