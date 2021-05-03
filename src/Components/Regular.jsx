@@ -16,17 +16,11 @@ export const Regular = () => {
         },
     ]);
 
-    // odpala się od razu funkcja, do sprawdzenia
-    // const upVoteHandler = (array, index) => {
-    //     setMemeTitleRegular((prevState) => {
-    //         return {...prevState};
-    //     });
-    // };
-
     const upVoteHandler = () => {
         return setMemeTitleRegular((prevState) => {
-            return [...prevState];
-            // , upVote:{...prevState.upVote, upVote: prevState.upVote+1}
+            let result = [...prevState];
+            result[0].upVote += 1;
+            return [...result];
         });
     };
 
