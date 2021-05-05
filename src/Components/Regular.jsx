@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {Mem} from "./Mem";
 
 // odpala się od razu funkcja, do sprawdzenia
@@ -59,7 +59,7 @@ export const Regular = () => {
     const downVoteHandler = (index) => {
         return setMemeTitleRegular((prevState) => {
             let initialArray = [...prevState];
-            initialArray[index].upVote++;
+            initialArray[index].downVote--;
             return initialArray;
         });
     };
@@ -73,7 +73,7 @@ export const Regular = () => {
                 upVoteHandler={upVoteHandler}
                 key={element.id}
                 index={index}
-                array={memeTitleRegular}
+                downVoteHandler={downVoteHandler}
             />
         ));
     };
