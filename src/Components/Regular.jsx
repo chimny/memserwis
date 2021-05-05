@@ -14,9 +14,27 @@ export const Regular = () => {
             downVote: 0,
             id: "A",
         },
+        {
+            name: "mem2",
+            upVote: 0,
+            downVote: 0,
+            id: "B",
+        },
+        {
+            name: "mem3",
+            upVote: 0,
+            downVote: 0,
+            id: "C",
+        },
+        {
+            name: "mem4",
+            upVote: 0,
+            downVote: 0,
+            id: "D",
+        },
     ]);
 
-    const upVoteHandler = (index) => {
+    /*     const upVoteHandler = (index) => {
         let counter = 0;
         return setMemeTitleRegular((prevState) => {
             let initialArray = [...prevState];
@@ -28,11 +46,23 @@ export const Regular = () => {
                 return initialArray;
             }
         });
+    }; */
+
+    const upVoteHandler = (index) => {
+        return setMemeTitleRegular((prevState) => {
+            let initialArray = [...prevState];
+            initialArray[index].upVote++;
+            return initialArray;
+        });
     };
 
-    useEffect(() => {
-        document.title = `${memeTitleRegular[0].upVote}`;
-    });
+    const downVoteHandler = (index) => {
+        return setMemeTitleRegular((prevState) => {
+            let initialArray = [...prevState];
+            initialArray[index].upVote++;
+            return initialArray;
+        });
+    };
 
     const memDisplayfunction = (array) => {
         return array.map((element, index) => (

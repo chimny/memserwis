@@ -3,8 +3,6 @@ import {Hot} from "./Components/Hot";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./App.css";
 
-// http://memebuild.com/api/1.0/{request}?api-key={YourApiKey}
-
 function App() {
     return (
         <div className="App">
