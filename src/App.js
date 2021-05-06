@@ -1,4 +1,5 @@
 import {Regular} from "./Components/Regular";
+import {Main} from "./Components/Main";
 import {Hot} from "./Components/Hot";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import "./App.css";
@@ -10,11 +11,9 @@ function App() {
                 <div>
                     <nav>
                         <ul>
-                            {/* <li>
-                                <Link exact to="/">
-                                    Home
-                                </Link>
-                            </li> */}
+                            <li>
+                                <Link to="/Main">Main</Link>
+                            </li>
                             <li>
                                 <Link to="/Regular">Regular</Link>
                             </li>
@@ -30,6 +29,9 @@ function App() {
                         {/* <Route exact to path="/">
                             <p>strona glowna</p>
                         </Route> */}
+                        <Route path="/Main">
+                            <Regular />
+                        </Route>
                         <Route path="/Regular">
                             <Regular />
                         </Route>
