@@ -1,7 +1,8 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {Mem} from "./Mem";
 import {Hot} from "./Hot";
 
+// component start
 export const Regular = () => {
     const [memeTitleRegular, setMemeTitleRegular] = useState([
         {

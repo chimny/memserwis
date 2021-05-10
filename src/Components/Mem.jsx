@@ -1,12 +1,6 @@
 export const Mem = (props) => {
-    const {
-        title,
-        upVote,
-        downVote,
-        downVoteHandler,
-        index,
-        upVoteHandler,
-    } = props;
+    const {title, upVote, downVote, downVoteHandler, index, upVoteHandler} =
+        props;
 
     return (
         <>

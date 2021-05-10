@@ -77,7 +77,6 @@ function App() {
                             </li>
                         </ul>
                     </nav>
-
                     <Switch>
                         <Route path="/Regular">
                             <Regular
