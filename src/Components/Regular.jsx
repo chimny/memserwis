@@ -1,11 +1,7 @@
 import {useState} from "react";
 import {Mem} from "./Mem";
+import {Hot} from "./Hot";
 
-// odpala się od razu funkcja, do sprawdzenia
-// const upVoteHandler = (array, index) => {
-//     return console.log(array[index].upVote);
-// };
-// component start
 export const Regular = () => {
     const [memeTitleRegular, setMemeTitleRegular] = useState([
         {
@@ -34,19 +30,20 @@ export const Regular = () => {
         },
     ]);
 
-    /*     const upVoteHandler = (index) => {
-        let counter = 0;
-        return setMemeTitleRegular((prevState) => {
-            let initialArray = [...prevState];
-            if (initialArray[index].upVote > counter) {
-                counter++;
-                return initialArray;
-            } else {
-                initialArray[index].upVote++;
-                return initialArray;
-            }
-        });
-    }; */
+    const [memeHot, setMemeHot] = useState([
+        {
+            name: "mem1Hot",
+            upVote: 0,
+            downVote: 0,
+            id: "A",
+        },
+        {
+            name: "mem2Hot",
+            upVote: 0,
+            downVote: 0,
+            id: "B",
+        },
+    ]);
 
     const upVoteHandler = (index) => {
         return setMemeTitleRegular((prevState) => {
@@ -78,5 +75,10 @@ export const Regular = () => {
         ));
     };
 
-    return <>{memDisplayfunction(memeTitleRegular)}</>;
+    return (
+        <>
+            {memDisplayfunction(memeTitleRegular)}
+            {memDisplayfunction(memeHot)}
+        </>
+    );
 };

@@ -24,12 +24,7 @@ function App() {
                         </ul>
                     </nav>
 
-                    {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
                     <Switch>
-                        {/* <Route exact to path="/">
-                            <p>strona glowna</p>
-                        </Route> */}
                         <Route path="/Regular">
                             <Regular />
                         </Route>
