@@ -45,40 +45,40 @@ export const Regular = () => {
         },
     ]);
 
-    const upVoteHandler = (index) => {
-        return setMemeTitleRegular((prevState) => {
+    const upVoteHandler = (index, hookReference) => {
+        return hookReference((prevState) => {
             let initialArray = [...prevState];
             initialArray[index].upVote++;
             return initialArray;
         });
     };
 
-    const downVoteHandler = (index) => {
-        return setMemeTitleRegular((prevState) => {
+    const downVoteHandler = (index, hookReference) => {
+        return hookReference((prevState) => {
             let initialArray = [...prevState];
             initialArray[index].downVote--;
             return initialArray;
         });
     };
 
-    const memDisplayfunction = (array) => {
+    const memDisplayfunction = (array, hookReference) => {
         return array.map((element, index) => (
             <Mem
                 title={element.name}
                 upVote={element.upVote}
                 downVote={element.downVote}
-                upVoteHandler={upVoteHandler}
+                upVoteHandler={() => upVoteHandler(index, hookReference)}
                 key={element.id}
                 index={index}
-                downVoteHandler={downVoteHandler}
+                downVoteHandler={() => downVoteHandler(index, hookReference)}
             />
         ));
     };
 
     return (
         <>
-            {memDisplayfunction(memeTitleRegular)}
-            {memDisplayfunction(memeHot)}
+            {memDisplayfunction(memeTitleRegular, setMemeTitleRegular)}
+            {memDisplayfunction(memeHot, setMemeHot)}
         </>
     );
 };
