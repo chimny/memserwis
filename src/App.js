@@ -33,32 +33,47 @@ function App() {
         },
     ]);
 
-    const upVoteHandler = (index) => {
-        return setMemeTitleRegular((prevState) => {
+    const [memeHot, setMemeHot] = useState([
+        {
+            name: "mem1Hot",
+            upVote: 0,
+            downVote: 0,
+            id: "E",
+        },
+        {
+            name: "mem2Hot",
+            upVote: 0,
+            downVote: 0,
+            id: "F",
+        },
+    ]);
+
+    const upVoteHandler = (index, hookReference) => {
+        return hookReference((prevState) => {
             let initialArray = [...prevState];
             initialArray[index].upVote++;
             return initialArray;
         });
     };
 
-    const downVoteHandler = (index) => {
-        return setMemeTitleRegular((prevState) => {
+    const downVoteHandler = (index, hookReference) => {
+        return hookReference((prevState) => {
             let initialArray = [...prevState];
             initialArray[index].downVote--;
             return initialArray;
         });
     };
 
-    const memDisplayfunction = (array) => {
+    const memDisplayfunction = (array, hookReference) => {
         return array.map((element, index) => (
             <Mem
                 title={element.name}
                 upVote={element.upVote}
                 downVote={element.downVote}
-                upVoteHandler={upVoteHandler}
+                upVoteHandler={() => upVoteHandler(index, hookReference)}
                 key={element.id}
                 index={index}
-                downVoteHandler={downVoteHandler}
+                downVoteHandler={() => downVoteHandler(index, hookReference)}
             />
         ));
     };
@@ -79,14 +94,13 @@ function App() {
                     </nav>
                     <Switch>
                         <Route path="/Regular">
-                            <Regular
-                                memDisplayfunction={() =>
-                                    memDisplayfunction(memeTitleRegular)
-                                }
-                            />
+                            {memDisplayfunction(
+                                memeTitleRegular,
+                                setMemeTitleRegular
+                            )}
                         </Route>
                         <Route path="/Hot">
-                            <Hot />
+                            {memDisplayfunction(memeHot, setMemeHot)}
                         </Route>
                     </Switch>
                 </div>
