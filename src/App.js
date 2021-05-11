@@ -1,9 +1,4 @@
-import {Mem} from "./Components/Mem";
-import {
-    upVoteHandler,
-    downVoteHandler,
-    memDisplayfunction,
-} from "./Functions/functions";
+import {memDisplayfunction} from "./Functions/functions";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import {useState} from "react";
 import "./App.css";
@@ -15,24 +10,28 @@ function App() {
             upVote: 0,
             downVote: 0,
             id: "A",
+            hot: false,
         },
         {
             name: "mem2",
             upVote: 0,
             downVote: 0,
             id: "B",
+            hot: false,
         },
         {
             name: "mem3",
             upVote: 0,
             downVote: 0,
             id: "C",
+            hot: false,
         },
         {
             name: "mem4",
             upVote: 0,
             downVote: 0,
             id: "D",
+            hot: false,
         },
     ]);
 
@@ -42,44 +41,16 @@ function App() {
             upVote: 0,
             downVote: 0,
             id: "E",
+            hot: true,
         },
         {
             name: "mem2Hot",
             upVote: 0,
             downVote: 0,
             id: "F",
+            hot: false,
         },
     ]);
-
-    const upVoteHandler = (index, hookReference) => {
-        return hookReference((prevState) => {
-            let initialArray = [...prevState];
-            initialArray[index].upVote++;
-            return initialArray;
-        });
-    };
-
-    const downVoteHandler = (index, hookReference) => {
-        return hookReference((prevState) => {
-            let initialArray = [...prevState];
-            initialArray[index].downVote--;
-            return initialArray;
-        });
-    };
-
-    const memDisplayfunction = (array, hookReference) => {
-        return array.map((element, index) => (
-            <Mem
-                title={element.name}
-                upVote={element.upVote}
-                downVote={element.downVote}
-                upVoteHandler={() => upVoteHandler(index, hookReference)}
-                key={element.id}
-                index={index}
-                downVoteHandler={() => downVoteHandler(index, hookReference)}
-            />
-        ));
-    };
 
     return (
         <div className="App">
