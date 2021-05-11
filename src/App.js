@@ -1,12 +1,15 @@
-import {Regular} from "./Components/Regular";
-import {Hot} from "./Components/Hot";
 import {Mem} from "./Components/Mem";
+import {
+    upVoteHandler,
+    downVoteHandler,
+    memDisplayfunction,
+} from "./Functions/functions";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import {useState} from "react";
 import "./App.css";
 
 function App() {
-    const [memeTitleRegular, setMemeTitleRegular] = useState([
+    const [memeRegular, setMemeRegular] = useState([
         {
             name: "mem1",
             upVote: 0,
@@ -94,10 +97,7 @@ function App() {
                     </nav>
                     <Switch>
                         <Route path="/Regular">
-                            {memDisplayfunction(
-                                memeTitleRegular,
-                                setMemeTitleRegular
-                            )}
+                            {memDisplayfunction(memeRegular, setMemeRegular)}
                         </Route>
                         <Route path="/Hot">
                             {memDisplayfunction(memeHot, setMemeHot)}
