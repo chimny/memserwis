@@ -48,20 +48,32 @@ function App() {
             upVote: 0,
             downVote: 0,
             id: "F",
-            hot: false,
+            hot: true,
         },
     ]);
 
-    useEffect(
-        () =>{
-            return setMemeHot((prevstate) => {
+    const memUpdater = () => {
+        setMemeHot((prevState) => {
+            let result = [...prevState];
+            console.log(result);
+            return result;
+        });
+    };
+
+    useEffect(memUpdater, [memeRegular]);
+
+    /*     useEffect(
+        () =>
+            setMemeHot((prevstate) => {
                 let result = [...prevstate];
+                let newMemes = memeRegular.filter((mem) => {
+                    return mem.upVote + mem.downVote > 5;
+                });
                 return result;
-            }
-               
-        }
-   
-    );
+                // return result.concat(newMemes);
+            }),
+        [memeRegular]
+    ); */
 
     return (
         <div className="App">
