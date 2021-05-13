@@ -1,6 +1,6 @@
 import {memDisplayfunction} from "./Functions/functions";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import "./App.css";
 
 function App() {
@@ -51,6 +51,19 @@ function App() {
             hot: false,
         },
     ]);
+
+    useEffect(
+        () =>
+            setMemeHot((prevstate) => {
+                let result = [...prevstate];
+                let newMemes = memeRegular.filter((mem) => {
+                    return mem.upVote + mem.downVote > 5;
+                });
+                return result;
+                // return result.concat(newMemes);
+            }),
+        [memeRegular]
+    );
 
     return (
         <div className="App">
