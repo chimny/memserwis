@@ -56,11 +56,10 @@ function App() {
         () =>
             setMemeHot((prevstate) => {
                 let result = [...prevstate];
-                let newMemes = memeRegular.filter((mem) => {
-                    return mem.upVote + mem.downVote > 5;
-                });
-                return result;
-                // return result.concat(newMemes);
+                let newMemes = memeRegular.filter((mem) =>
+                    console.log(result.includes(mem))
+                );
+                return result.concat(newMemes);
             }),
         [memeRegular]
     );
