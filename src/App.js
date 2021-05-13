@@ -7,10 +7,10 @@ function App() {
     const [memeRegular, setMemeRegular] = useState([
         {
             name: "mem1",
-            upVote: 0,
+            upVote: 8,
             downVote: 0,
             id: "A",
-            hot: false,
+            hot: true,
         },
         {
             name: "mem2",
@@ -38,42 +38,39 @@ function App() {
     const [memeHot, setMemeHot] = useState([
         {
             name: "mem1Hot",
-            upVote: 0,
+            upVote: 3,
             downVote: 0,
             id: "E",
-            hot: true,
+            hot: false,
         },
         {
             name: "mem2Hot",
-            upVote: 0,
+            upVote: 7,
             downVote: 0,
             id: "F",
             hot: true,
         },
     ]);
 
+    // use effect to add new arrays
     const memUpdater = () => {
         setMemeHot((prevState) => {
+            // obecny stan tablicy hot
             let result = [...prevState];
-            console.log(result);
-            return result;
+            let test = memeRegular.filter(
+                (mem) =>
+                    mem.hot === true &&
+                    mem.upVote + mem.downVote > 5 &&
+                    !result.includes(mem)
+            );
+            if (5 > 2) {
+                console.log("ok");
+            }
+            return result.concat(test);
         });
     };
 
     useEffect(memUpdater, [memeRegular]);
-
-    /*     useEffect(
-        () =>
-            setMemeHot((prevstate) => {
-                let result = [...prevstate];
-                let newMemes = memeRegular.filter((mem) => {
-                    return mem.upVote + mem.downVote > 5;
-                });
-                return result;
-                // return result.concat(newMemes);
-            }),
-        [memeRegular]
-    ); */
 
     return (
         <div className="App">
