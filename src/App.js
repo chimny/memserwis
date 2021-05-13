@@ -53,15 +53,14 @@ function App() {
     ]);
 
     useEffect(
-        () =>
-            setMemeHot((prevstate) => {
+        () =>{
+            return setMemeHot((prevstate) => {
                 let result = [...prevstate];
-                let newMemes = memeRegular.filter((mem) =>
-                    console.log(result.includes(mem))
-                );
-                return result.concat(newMemes);
-            }),
-        [memeRegular]
+                return result;
+            }
+               
+        }
+   
     );
 
     return (
