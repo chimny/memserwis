@@ -7,7 +7,7 @@ function App() {
     const [memeRegular, setMemeRegular] = useState([
         {
             name: "mem1",
-            upVote: 8,
+            upVote: 0,
             downVote: 0,
             id: "A",
             hot: true,
@@ -36,20 +36,20 @@ function App() {
     ]);
 
     const [memeHot, setMemeHot] = useState([
-        {
-            name: "mem1Hot",
-            upVote: 3,
-            downVote: 0,
-            id: "E",
-            hot: false,
-        },
-        {
-            name: "mem2Hot",
-            upVote: 7,
-            downVote: 0,
-            id: "F",
-            hot: true,
-        },
+        // {
+        //     name: "mem1Hot",
+        //     upVote: 3,
+        //     downVote: 0,
+        //     id: "E",
+        //     hot: false,
+        // },
+        // {
+        //     name: "mem2Hot",
+        //     upVote: 7,
+        //     downVote: 0,
+        //     id: "F",
+        //     hot: true,
+        // },
     ]);
 
     // use effect to add new arrays
