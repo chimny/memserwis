@@ -52,9 +52,6 @@ function App() {
         },
     ]);
 
-
-
-    
     // use effect to add new arrays
     const memUpdater = () => {
         setMemeHot((prevState) => {
@@ -66,9 +63,6 @@ function App() {
                     mem.upVote + mem.downVote > 5 &&
                     !result.includes(mem)
             );
-            if (5 > 2) {
-                console.log("ok");
-            }
             return result.concat(test);
         });
     };
