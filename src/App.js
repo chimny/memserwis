@@ -52,6 +52,9 @@ function App() {
         },
     ]);
 
+
+
+    
     // use effect to add new arrays
     const memUpdater = () => {
         setMemeHot((prevState) => {
