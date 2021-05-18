@@ -10,7 +10,7 @@ function App() {
             upVote: 0,
             downVote: 0,
             id: "A",
-            hot: true,
+            hot: false,
         },
         {
             name: "mem2",
@@ -36,38 +36,57 @@ function App() {
     ]);
 
     const [memeHot, setMemeHot] = useState([
-        // {
-        //     name: "mem1Hot",
-        //     upVote: 3,
-        //     downVote: 0,
-        //     id: "E",
-        //     hot: false,
-        // },
-        // {
-        //     name: "mem2Hot",
-        //     upVote: 7,
-        //     downVote: 0,
-        //     id: "F",
-        //     hot: true,
-        // },
+        {
+            name: "mem5",
+            upVote: 13,
+            downVote: 0,
+            id: "E",
+            hot: true,
+        },
     ]);
 
-    // use effect to add new arrays
+    const HotUpdater = () =>
+        setMemeHot([
+            {
+                name: "mem4",
+                upVote: 0,
+                downVote: 0,
+                id: "D",
+                hot: false,
+            },
+        ]);
+
     const memUpdater = () => {
         setMemeHot((prevState) => {
-            // obecny stan tablicy hot
-            let result = [...prevState];
-            let test = memeRegular.filter(
+            const currentResult = [...prevState];
+            const newMemes = memeRegular.filter(
                 (mem) =>
                     mem.hot === true &&
                     mem.upVote + mem.downVote > 5 &&
-                    !result.includes(mem)
+                    !currentResult.includes(mem)
             );
-            return result.concat(test);
+            let answer = currentResult.concat(newMemes);
+            return answer;
+            // return answer.filter((mem) => mem.upVote + mem.downVote > 5);
         });
     };
 
+    /*     const memUpdater = () => {
+        setMemeHot((prevState) => {
+            let currentResult = [...prevState];
+            let newMemes = memeRegular.filter(
+                (mem) =>
+                    mem.hot === true &&
+                    mem.upVote + mem.downVote > 5 &&
+                    !currentResult.includes(mem)
+            );
+            let answer = currentResult.concat(newMemes);
+            return answer.filter((mem) => mem.upVote + mem.downVote > 5);
+        });
+    }; */
+
     useEffect(memUpdater, [memeRegular]);
+    useEffect(HotUpdater, [memeHot]);
 
     return (
         <div className="App">
