@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
 import {Hot} from "./Components/Hot";
 import {Regular} from "./Components/Regular";
+import {AppState} from "./Context/AppState";
 import "./App.css";
 // due to usecContext
 import * as React from "react";
@@ -87,16 +88,18 @@ function App() {
                             </li>
                         </ul>
                     </nav>
-                    <Switch>
-                        <Route path="/Regular">
-                            {/* {memDisplayfunction(memeRegular, setMemeRegular)} */}
-                            <Regular />
-                        </Route>
-                        <Route path="/Hot">
-                            <Hot />
-                            {/* {memDisplayfunction(memeHot, setMemeHot)} */}
-                        </Route>
-                    </Switch>
+                    <AppState>
+                        <Switch>
+                            <Route path="/Regular">
+                                {/* {memDisplayfunction(memeRegular, setMemeRegular)} */}
+                                <Regular />
+                            </Route>
+                            <Route path="/Hot">
+                                <Hot />
+                                {/* {memDisplayfunction(memeHot, setMemeHot)} */}
+                            </Route>
+                        </Switch>
+                    </AppState>
                 </div>
             </Router>
         </div>
