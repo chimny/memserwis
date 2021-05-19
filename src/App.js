@@ -1,7 +1,11 @@
 import {memDisplayfunction} from "./Functions/functions";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import {useEffect, useState} from "react";
+import {Hot} from "./Components/Hot";
+import {Regular} from "./Components/Regular";
 import "./App.css";
+// due to usecContext
+import * as React from "react";
 
 function App() {
     const [memeRegular, setMemeRegular] = useState([
@@ -34,7 +38,7 @@ function App() {
             hot: false,
         },
     ]);
-
+    /* 
     const [memeHot, setMemeHot] = useState([
         {
             name: "mem5",
@@ -46,21 +50,28 @@ function App() {
     ]);
 
     const memUpdater = () => {
-        if (2 > 3) {
-            setMemeHot((prevState) => {
-                let currentResult = [...prevState];
-                let newMemes = memeRegular.filter(
-                    (mem) =>
-                        mem.hot === true &&
-                        mem.upVote + mem.downVote > 5 &&
-                        !currentResult.includes(mem)
-                );
-                let answer = currentResult.concat(newMemes);
-                return answer.filter((mem) => mem.upVote + mem.downVote > 5);
-            });
-        }
+        setMemeHot((prevState) => {
+            let currentResult = [...prevState];
+            let newMemes = memeRegular.filter(
+                (mem) =>
+                    mem.hot === true &&
+                    mem.upVote + mem.downVote > 5 &&
+                    !currentResult.includes(mem)
+            );
+            let answer = currentResult.concat(newMemes);
+            return answer.filter((mem) => mem.upVote + mem.downVote > 5);
+        });
     };
     useEffect(memUpdater, [memeRegular]);
+    // use context starts
+    const CountContext = React.useContext(memeRegular);
+    function CountDisplay() {
+        const {count} = React.useContext(memeRegular);
+        return <div>{count}</div>;
+    }
+
+    // use context ends
+ */
 
     return (
         <div className="App">
@@ -78,10 +89,12 @@ function App() {
                     </nav>
                     <Switch>
                         <Route path="/Regular">
-                            {memDisplayfunction(memeRegular, setMemeRegular)}
+                            {/* {memDisplayfunction(memeRegular, setMemeRegular)} */}
+                            <Regular />
                         </Route>
                         <Route path="/Hot">
-                            {memDisplayfunction(memeHot, setMemeHot)}
+                            <Hot />
+                            {/* {memDisplayfunction(memeHot, setMemeHot)} */}
                         </Route>
                     </Switch>
                 </div>
