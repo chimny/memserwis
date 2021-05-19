@@ -1,6 +1,6 @@
-import {memDisplayfunction} from "./Functions/functions";
+// import {memDisplayfunction} from "./Functions/functions";
 import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
-import {useEffect, useState} from "react";
+// import {useEffect, useState} from "react";
 import {Hot} from "./Components/Hot";
 import {Regular} from "./Components/Regular";
 import {AppState} from "./Context/AppState";
@@ -9,36 +9,6 @@ import "./App.css";
 import * as React from "react";
 
 function App() {
-    const [memeRegular, setMemeRegular] = useState([
-        {
-            name: "mem1",
-            upVote: 0,
-            downVote: 0,
-            id: "A",
-            hot: false,
-        },
-        {
-            name: "mem2",
-            upVote: 0,
-            downVote: 0,
-            id: "B",
-            hot: false,
-        },
-        {
-            name: "mem3",
-            upVote: 0,
-            downVote: 0,
-            id: "C",
-            hot: false,
-        },
-        {
-            name: "mem4",
-            upVote: 0,
-            downVote: 0,
-            id: "D",
-            hot: false,
-        },
-    ]);
     /* 
     const [memeHot, setMemeHot] = useState([
         {
