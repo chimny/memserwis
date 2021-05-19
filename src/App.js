@@ -45,48 +45,22 @@ function App() {
         },
     ]);
 
-    const HotUpdater = () =>
-        setMemeHot([
-            {
-                name: "mem4",
-                upVote: 0,
-                downVote: 0,
-                id: "D",
-                hot: false,
-            },
-        ]);
-
     const memUpdater = () => {
-        setMemeHot((prevState) => {
-            const currentResult = [...prevState];
-            const newMemes = memeRegular.filter(
-                (mem) =>
-                    mem.hot === true &&
-                    mem.upVote + mem.downVote > 5 &&
-                    !currentResult.includes(mem)
-            );
-            let answer = currentResult.concat(newMemes);
-            return answer;
-            // return answer.filter((mem) => mem.upVote + mem.downVote > 5);
-        });
+        if (2 > 3) {
+            setMemeHot((prevState) => {
+                let currentResult = [...prevState];
+                let newMemes = memeRegular.filter(
+                    (mem) =>
+                        mem.hot === true &&
+                        mem.upVote + mem.downVote > 5 &&
+                        !currentResult.includes(mem)
+                );
+                let answer = currentResult.concat(newMemes);
+                return answer.filter((mem) => mem.upVote + mem.downVote > 5);
+            });
+        }
     };
-
-    /*     const memUpdater = () => {
-        setMemeHot((prevState) => {
-            let currentResult = [...prevState];
-            let newMemes = memeRegular.filter(
-                (mem) =>
-                    mem.hot === true &&
-                    mem.upVote + mem.downVote > 5 &&
-                    !currentResult.includes(mem)
-            );
-            let answer = currentResult.concat(newMemes);
-            return answer.filter((mem) => mem.upVote + mem.downVote > 5);
-        });
-    }; */
-
     useEffect(memUpdater, [memeRegular]);
-    useEffect(HotUpdater, [memeHot]);
 
     return (
         <div className="App">
