@@ -8,7 +8,7 @@ export const Hot = () => {
     return (
         <>
             <p>Hot</p>
-            <p>ok</p>
+            {/* <p>{message}</p> */}
         </>
     );
 };

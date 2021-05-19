@@ -2,7 +2,7 @@ import {useState} from "react";
 import {AppContext} from "./app-context";
 import {memDisplayfunction} from "../Functions/functions";
 
-export const AppState = (props) => {
+export const AppState = () => {
     const [memeRegular, setMemeRegular] = useState([
         {
             name: "mem1",
@@ -33,7 +33,10 @@ export const AppState = (props) => {
             hot: false,
         },
     ]);
+
     return (
-        <AppContext.Provider value={memeRegular}>{/*  */}</AppContext.Provider>
+        <AppContext.Provider value={{memeRegular}}>
+            {memDisplayfunction(memeRegular, setMemeRegular)}
+        </AppContext.Provider>
     );
 };
