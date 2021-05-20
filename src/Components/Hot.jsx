@@ -1,14 +1,13 @@
-import {useContext} from "react";
+import React, {useContext} from "react";
 import {Mem} from "./Mem";
 
-import {AppContext} from "../Context/app-context";
+import {AppContext} from "../Context/AppContext";
 
 export const Hot = () => {
     const {message} = useContext(AppContext);
     return (
         <>
-            <p>Hot</p>
-            <p>{message}</p>
+            <p>Hot {message}</p>
         </>
     );
 };
