@@ -1,12 +1,14 @@
-import {useContext} from "react";
+import React, {useContext, useState} from "react";
+import {memDisplayfunction} from "../Functions/functions";
 import {AppContext} from "../Context/appContext";
 
-export const Regular = (props) => {
-    const {message} = useContext(AppContext);
-    // console.log(message);
+export const Regular = () => {
+    const {memeRegular, setMemeRegular} = useContext(AppContext);
+    console.log(memeRegular);
     return (
         <>
-            <p>Regular {message}</p>
+            <p> Regular </p>
+            {memDisplayfunction(memeRegular, setMemeRegular)}
         </>
     );
 };

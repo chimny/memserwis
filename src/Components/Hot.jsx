@@ -1,15 +1,14 @@
-import React, {useContext} from "react";
-import {Mem} from "./Mem";
+import React, {useContext, useState} from "react";
 import {memDisplayfunction} from "../Functions/functions";
-
 import {AppContext} from "../Context/appContext";
 
 export const Hot = () => {
-    const {memeRegular} = useContext(AppContext);
+    const {memeRegular, setMemeRegular} = useContext(AppContext);
     console.log(memeRegular);
     return (
         <>
-            <p>Hot {memeRegular}</p>
+            <p> lol </p>
+            {memDisplayfunction(memeRegular, setMemeRegular)}
         </>
     );
 };

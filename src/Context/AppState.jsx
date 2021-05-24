@@ -1,4 +1,4 @@
-import {Children, useState} from "react";
+import {useState} from "react";
 import {AppContext} from "./appContext";
 import {memDisplayfunction} from "../Functions/functions";
 
@@ -35,7 +35,7 @@ export const AppState = (props) => {
     ]);
 
     return (
-        <AppContext.Provider value={memeRegular}>
+        <AppContext.Provider value={{memeRegular, setMemeRegular}}>
             {props.children}
         </AppContext.Provider>
     );
