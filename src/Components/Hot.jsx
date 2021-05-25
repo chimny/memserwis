@@ -5,10 +5,13 @@ import {AppContext} from "../Context/appContext";
 export const Hot = () => {
     const {memeRegular, setMemeRegular} = useContext(AppContext);
     console.log(memeRegular);
+    const test = memeRegular.filter(
+        (element) => element.upVote + element.downVote > 5
+    );
     return (
         <>
             <p> lol </p>
-            {memDisplayfunction(memeRegular, setMemeRegular)}
+            {memDisplayfunction(test, setMemeRegular)}
         </>
     );
 };
