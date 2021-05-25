@@ -1,6 +1,5 @@
 import {useState} from "react";
 import {AppContext} from "./appContext";
-import {memDisplayfunction} from "../Functions/functions";
 
 export const AppState = (props) => {
     const [memeRegular, setMemeRegular] = useState([

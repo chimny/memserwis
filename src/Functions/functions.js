@@ -1,5 +1,6 @@
 import {Mem} from "../Components/Mem";
 
+// tutaj useReduce
 export const upVoteHandler = (index, hookReference) => {
     return hookReference((prevState) => {
         let initialArray = [...prevState];
@@ -13,6 +14,7 @@ export const upVoteHandler = (index, hookReference) => {
     });
 };
 
+// tutaj useReduce
 export const downVoteHandler = (index, hookReference) => {
     return hookReference((prevState) => {
         let initialArray = [...prevState];
@@ -26,17 +28,22 @@ export const downVoteHandler = (index, hookReference) => {
     });
 };
 
-export const memDisplayfunction = (array, hookReference) => {
-    return array.map((element, index) => (
-        <Mem
-            title={element.name}
-            upVote={element.upVote}
-            downVote={element.downVote}
-            upVoteHandler={() => upVoteHandler(index, hookReference)}
-            key={element.id}
-            index={index}
-            downVoteHandler={() => downVoteHandler(index, hookReference)}
-            hot={element.hot}
-        />
-    ));
+export const memDisplayfunction = (array, hookReference, pureArray = array) => {
+    return array.map((element) => {
+        const index = pureArray.findIndex(
+            (pureElement) => pureElement.id === element.id
+        );
+        return (
+            <Mem
+                title={element.name}
+                upVote={element.upVote}
+                downVote={element.downVote}
+                upVoteHandler={() => upVoteHandler(index, hookReference)}
+                key={element.id}
+                index={index}
+                downVoteHandler={() => downVoteHandler(index, hookReference)}
+                hot={element.hot}
+            />
+        );
+    });
 };
