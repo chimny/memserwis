@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {AppContext} from "./appContext";
+import {AppContext} from "./AppContext";
 
 export const AppState = (props) => {
     const [memeRegular, setMemeRegular] = useState([
