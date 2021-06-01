@@ -4,7 +4,6 @@ import {AppContext} from "../Context/AppContext";
 
 export const Regular = () => {
     const {memeRegular, setMemeRegular} = useContext(AppContext);
-    console.log(memeRegular);
     return (
         <>
             <p> Regular </p>

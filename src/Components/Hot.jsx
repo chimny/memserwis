@@ -4,7 +4,6 @@ import {AppContext} from "../Context/AppContext";
 
 export const Hot = () => {
     const {memeRegular, setMemeRegular} = useContext(AppContext);
-    console.log(memeRegular);
     const topMemes = memeRegular.filter(
         (element) => element.upVote + element.downVote > 5
     );
