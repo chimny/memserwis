@@ -8,6 +8,7 @@ export const AppState = (props) => {
             upVote: 0,
             downVote: 0,
             id: "A",
+            imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/t7OC4YmUU65nB9Rs.jpg",
             hot: false,
         },
         {
@@ -15,6 +16,7 @@ export const AppState = (props) => {
             upVote: 0,
             downVote: 0,
             id: "B",
+            imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/1qEHO1byIHfoThhb.jpg",
             hot: false,
         },
         {
@@ -22,6 +24,7 @@ export const AppState = (props) => {
             upVote: 0,
             downVote: 0,
             id: "C",
+            imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/tzgTaBd1Kvs6aMh7.jpg",
             hot: false,
         },
         {
@@ -29,6 +32,7 @@ export const AppState = (props) => {
             upVote: 0,
             downVote: 0,
             id: "D",
+            imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/8AQqXgqpZ6PVrzDi.jpg",
             hot: false,
         },
     ]);

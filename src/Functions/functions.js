@@ -43,6 +43,7 @@ export const memDisplayfunction = (array, hookReference, pureArray = array) => {
                 index={index}
                 downVoteHandler={() => downVoteHandler(index, hookReference)}
                 hot={element.hot}
+                imgSRC={element.imgSRC}
             />
         );
     });
