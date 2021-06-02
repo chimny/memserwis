@@ -4,10 +4,5 @@ import {AppContext} from "../Context/AppContext";
 
 export const Regular = () => {
     const {memeRegular, setMemeRegular} = useContext(AppContext);
-    return (
-        <>
-            <p> Regular </p>
-            {memDisplayfunction(memeRegular, setMemeRegular)}
-        </>
-    );
+    return <>{memDisplayfunction(memeRegular, setMemeRegular)}</>;
 };

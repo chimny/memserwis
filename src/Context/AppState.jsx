@@ -13,7 +13,7 @@ export const AppState = (props) => {
         },
         {
             name: "mem2",
-            upVote: 0,
+            upVote: 7,
             downVote: 0,
             id: "B",
             imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/1qEHO1byIHfoThhb.jpg",

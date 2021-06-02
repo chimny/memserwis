@@ -1,3 +1,11 @@
+import styled from "styled-components";
+
+const MemWrapper = styled.div`
+    background: red;
+    width: 70vw;
+    margin: 0 auto;
+`;
+
 export const Mem = (props) => {
     const {
         title,
@@ -10,9 +18,9 @@ export const Mem = (props) => {
     } = props;
 
     return (
-        <>
-            <p>{title}</p>
-            <img src={imgSRC} alt="" />
+        <MemWrapper>
+            <h3>{title}</h3>
+            <img src={imgSRC} alt="mem" />
             <div>
                 Liczba upVote : {upVote}
                 Liczba downVote : {downVote}
@@ -21,6 +29,6 @@ export const Mem = (props) => {
                 <button onClick={() => upVoteHandler(index)}>UpVote</button>
                 <button onClick={() => downVoteHandler(index)}>DownVote</button>
             </div>
-        </>
+        </MemWrapper>
     );
 };

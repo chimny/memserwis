@@ -2,7 +2,7 @@ import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import {Hot} from "./Components/Hot";
 import {Regular} from "./Components/Regular";
 import {AppState} from "./Context/AppState";
-import "./App.css";
+import "./Styles/App.css";
 import * as React from "react";
 
 function App() {
@@ -20,16 +20,18 @@ function App() {
                             </li>
                         </ul>
                     </nav>
-                    <AppState>
-                        <Switch>
-                            <Route path="/Regular">
-                                <Regular />
-                            </Route>
-                            <Route path="/Hot">
-                                <Hot />
-                            </Route>
-                        </Switch>
-                    </AppState>
+                    <div className="memes">
+                        <AppState>
+                            <Switch>
+                                <Route path="/Regular">
+                                    <Regular />
+                                </Route>
+                                <Route path="/Hot">
+                                    <Hot />
+                                </Route>
+                            </Switch>
+                        </AppState>
+                    </div>
                 </div>
             </Router>
         </div>

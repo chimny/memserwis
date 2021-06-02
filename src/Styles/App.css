@@ -1,0 +1,26 @@
+.App {
+    display: grid;
+    grid-template-columns: repeat(5fr);
+    text-align: center;
+    margin: 0;
+    grid-template-areas: "navigation navigation memes memes memes";
+}
+
+* {
+    text-decoration: none;
+}
+
+nav {
+    width: 20%;
+    height: 100vh;
+    background: blue;
+    grid-area: navigation;
+}
+
+ul {
+    list-style: none;
+}
+
+.memes {
+    grid-area: navigation;
+}

@@ -1,6 +1,5 @@
 import {Mem} from "../Components/Mem";
 
-// tutaj useReduce
 export const upVoteHandler = (index, hookReference) => {
     return hookReference((prevState) => {
         let initialArray = [...prevState];
@@ -14,7 +13,6 @@ export const upVoteHandler = (index, hookReference) => {
     });
 };
 
-// tutaj useReduce
 export const downVoteHandler = (index, hookReference) => {
     return hookReference((prevState) => {
         let initialArray = [...prevState];
