@@ -34,7 +34,8 @@ ul a:hover {
 }
 
 .memes {
-    width: 100%;
+    width: 80vw;
+    position: relative;
     margin-left: auto;
     margin-right: 0;
 }
