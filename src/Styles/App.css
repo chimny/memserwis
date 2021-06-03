@@ -8,7 +8,7 @@
     margin: 0 0;
 }
 
-nav {
+/* nav {
     width: 20vw;
     height: 100vh;
     background: blue;
@@ -30,8 +30,8 @@ ul a {
 }
 
 ul a:hover {
-    text-decoration: underline;
-}
+    text-decoration: underline; */
+/* } */
 
 .memes {
     width: 80vw;
