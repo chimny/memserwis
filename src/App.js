@@ -58,6 +58,11 @@ function App() {
                                 </div>
                                 <main>
                                     <Route
+                                        exact
+                                        path="/"
+                                        component={(props) => <Regular />}
+                                    />
+                                    <Route
                                         path="/Regular"
                                         component={(props) => <Regular />}
                                     />
