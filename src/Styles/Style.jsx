@@ -14,7 +14,7 @@ export const GlobalStyle = createGlobalStyle`
 
 // styles for single mem
 export const MemWrapper = styled.div`
-    background: blue;
+    background: #87a4da;
     padding: 20px 0;
     width: 90vw;
     margin: 0 0 0 auto;
