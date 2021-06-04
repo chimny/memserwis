@@ -1,10 +1,4 @@
-import styled from "styled-components";
-
-const MemWrapper = styled.div`
-    background: red;
-    width: 70vw;
-    margin: 0 auto;
-`;
+import {MemWrapper} from "../Styles/Style";
 
 export const Mem = (props) => {
     const {
