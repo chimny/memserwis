@@ -16,6 +16,17 @@ export const GlobalStyle = createGlobalStyle`
 export const MemWrapper = styled.div`
     background: blue;
     padding: 20px 0;
-    width: 70vw;
-    margin: 0 auto;
+    width: 90vw;
+    margin: 0 0 0 auto;
 `;
+
+// navigation
+
+export const Navigation = styled.nav`
+    position: fixed;
+    width: 10vw;
+    height: 100vh;
+    background: rgb(221, 115, 129);
+`;
+
+export const Wrapper = styled.div``;
