@@ -1,9 +1,14 @@
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import * as React from "react";
+
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import {Hot} from "./Components/Hot";
 import {Regular} from "./Components/Regular";
 import {AppState} from "./Context/AppState";
 import "./Styles/App.css";
-import * as React from "react";
+import "@trendmicro/react-sidenav/dist/react-sidenav.css";
+
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faFire, faHome} from "@fortawesome/free-solid-svg-icons";
 
 import SideNav, {
     Toggle,
@@ -13,40 +18,9 @@ import SideNav, {
     NavText,
 } from "@trendmicro/react-sidenav";
 
-// Be sure to include styles at some point, probably during your bootstraping
-import "@trendmicro/react-sidenav/dist/react-sidenav.css";
-
 function App() {
     return (
         <div className="App">
-            {/* <Router>
-                <div>
-                    <nav>
-                        <ul>
-                            <li>
-                                <Link to="/Regular">Regular</Link>
-                            </li>
-                            <li>
-                                <Link to="/Hot">Hot</Link>
-                            </li>
-                        </ul>
-                    </nav>
-                    <div className="memes">
-                        <AppState>
-                            <Switch>
-                                <Route path="/Regular">
-                                    <Regular />
-                                </Route>
-                                <Route path="/Hot">
-                                    <Hot />
-                                </Route>
-                            </Switch>
-                        </AppState>
-                    </div>
-                </div>
-            </Router> */}
-
-            {/* new menu below */}
             <Router>
                 <AppState>
                     <Route
@@ -64,18 +38,16 @@ function App() {
                                     <SideNav.Nav defaultSelected="Regular">
                                         <NavItem eventKey="Regular">
                                             <NavIcon>
-                                                <i
-                                                    className="fa fa-fw fa-home"
-                                                    style={{fontSize: "1.75em"}}
+                                                <FontAwesomeIcon
+                                                    icon={faHome}
                                                 />
                                             </NavIcon>
                                             <NavText>Regular</NavText>
                                         </NavItem>
                                         <NavItem eventKey="Hot">
                                             <NavIcon>
-                                                <i
-                                                    className="fa fa-fw fa-device"
-                                                    style={{fontSize: "1.75em"}}
+                                                <FontAwesomeIcon
+                                                    icon={faFire}
                                                 />
                                             </NavIcon>
                                             <NavText>Hot</NavText>
