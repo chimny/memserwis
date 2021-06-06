@@ -1,8 +1,15 @@
 import * as React from "react";
-import "./Styles/style.css";
-import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
+
+import {
+    BrowserRouter as Router,
+    Route,
+    Link,
+    Switch,
+    Redirect,
+} from "react-router-dom";
 import {Hot} from "./Components/Hot";
 import {Regular} from "./Components/Regular";
+import {PageNotFound} from "./Components/PageNotFound";
 import {AppState} from "./Context/AppState";
 import {GlobalStyle, Navigation, Wrapper} from "./Styles/Style";
 
@@ -22,19 +29,22 @@ function App() {
                                 </li>
                             </ul>
                         </Navigation>
-
-                        <Switch>
-                            <Route path="/regular">
-                                <Regular />
-                            </Route>
-                            <Route path="/hot">
-                                <Hot />
-                            </Route>
-                            {/* dodać redirect + dodać 404 */}
-                            <Route path="/">
-                                <Regular />
-                            </Route>
-                        </Switch>
+                        <div>
+                            <Switch>
+                                <Route path="/regular">
+                                    <Regular />
+                                </Route>
+                                <Route path="/hot">
+                                    <Hot />
+                                </Route>
+                                <Route exact path="/">
+                                    <Redirect to="/regular" />
+                                </Route>
+                                <Route path="*">
+                                    <PageNotFound />
+                                </Route>
+                            </Switch>
+                        </div>
                     </Wrapper>
                 </AppState>
             </Router>

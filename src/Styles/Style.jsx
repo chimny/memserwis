@@ -5,7 +5,7 @@ import {createGlobalStyle} from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
     body {
-    color: white;
+    /* color: white; */
     text-align: center;
     margin: 0;
 
@@ -23,10 +23,12 @@ export const MemWrapper = styled.div`
 // navigation
 
 export const Navigation = styled.nav`
-    position: fixed;
+    /* position: fixed; */
     width: 10vw;
     height: 100vh;
     background: rgb(221, 115, 129);
 `;
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.div`
+    display: flex;
+`;
