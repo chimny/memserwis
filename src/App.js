@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route, Link, Switch} from "react-router-dom";
 import {Hot} from "./Components/Hot";
 import {Regular} from "./Components/Regular";
 import {AppState} from "./Context/AppState";
-import {GlobalStyle, Navigation, Wrapper, Ul} from "./Styles/Style";
+import {GlobalStyle, Navigation, Wrapper} from "./Styles/Style";
 
 function App() {
     return (
@@ -23,8 +23,6 @@ function App() {
                             </ul>
                         </Navigation>
 
-                        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
                         <Switch>
                             <Route path="/regular">
                                 <Regular />
@@ -32,6 +30,7 @@ function App() {
                             <Route path="/hot">
                                 <Hot />
                             </Route>
+                            {/* dodać redirect + dodać 404 */}
                             <Route path="/">
                                 <Regular />
                             </Route>

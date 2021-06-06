@@ -13,6 +13,9 @@ export const upVoteHandler = (index, hookReference) => {
     });
 };
 
+// przy użyciu map
+// nie przekazywać hookreference
+// unikać nazw generycznych (trudniej o kontekst, czytanie kodu)
 export const downVoteHandler = (index, hookReference) => {
     return hookReference((prevState) => {
         let initialArray = [...prevState];
@@ -26,6 +29,8 @@ export const downVoteHandler = (index, hookReference) => {
     });
 };
 
+// zmienić na dużą literę
+// w przypadku id znika problem z indeksami.
 export const memDisplayfunction = (array, hookReference, pureArray = array) => {
     return array.map((element) => {
         const index = pureArray.findIndex(

@@ -1,6 +1,7 @@
 import {useState} from "react";
 import {AppContext} from "./AppContext";
 
+// wywalić hot w objekcie
 export const AppState = (props) => {
     const [memeRegular, setMemeRegular] = useState([
         {

@@ -20,6 +20,7 @@ export const Mem = (props) => {
                 Liczba downVote : {downVote}
             </div>
             <div>
+                {/* zastąpić index -> ID */}
                 <button onClick={() => upVoteHandler(index)}>UpVote</button>
                 <button onClick={() => downVoteHandler(index)}>DownVote</button>
             </div>

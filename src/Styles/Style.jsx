@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     color: white;
     text-align: center;
     margin: 0;
-    text-transform: uppercase;
+
     }
 `;
 
