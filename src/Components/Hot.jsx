@@ -1,11 +1,29 @@
 import React, {useContext} from "react";
-import {memDisplayfunction} from "../Functions/functions";
+
 import {AppContext} from "../Context/AppContext";
+import {Mem} from "./Mem";
 
 export const Hot = () => {
-    const {memeRegular, setMemeRegular} = useContext(AppContext);
-    const topMemes = memeRegular.filter((element) => {
-        return element.upVote + element.downVote > 5;
-    });
-    return <>{memDisplayfunction(topMemes, setMemeRegular, memeRegular)}</>;
+    const {memes, setMemes, topMemes} = useContext(AppContext);
+
+    // zmodyfikować propsy
+    return (
+        <>
+            {topMemes.map((element) => (
+                <Mem
+                    title={element.name}
+                    upVote={element.upVote}
+                    downVote={element.downVote}
+                    // upVoteHandler={() => upVoteHandler(index, hookReference)}
+                    key={element.id}
+                    // index={index}
+                    // downVoteHandler={() =>
+                    //     downVoteHandler(index, hookReference)
+                    // }
+                    hot={element.hot}
+                    imgSRC={element.imgSRC}
+                />
+            ))}
+        </>
+    );
 };

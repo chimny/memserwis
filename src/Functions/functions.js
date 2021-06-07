@@ -4,11 +4,6 @@ export const upVoteHandler = (index, hookReference) => {
     return hookReference((prevState) => {
         let initialArray = [...prevState];
         initialArray[index].upVote++;
-        if (initialArray[index].upVote + initialArray[index].downVote > 5) {
-            initialArray[index].hot = true;
-        } else {
-            initialArray[index].hot = false;
-        }
         return initialArray;
     });
 };
@@ -20,11 +15,6 @@ export const downVoteHandler = (index, hookReference) => {
     return hookReference((prevState) => {
         let initialArray = [...prevState];
         initialArray[index].downVote--;
-        if (initialArray[index].upVote + initialArray[index].downVote > 5) {
-            initialArray[index].hot = true;
-        } else {
-            initialArray[index].hot = false;
-        }
         return initialArray;
     });
 };
