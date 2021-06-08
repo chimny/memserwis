@@ -9,19 +9,14 @@ export const Hot = () => {
     // zmodyfikować propsy
     return (
         <>
-            {topMemes.map((element) => (
+            {topMemes.map((mem) => (
                 <Mem
-                    title={element.name}
-                    upVote={element.upVote}
-                    downVote={element.downVote}
-                    // upVoteHandler={() => upVoteHandler(index, hookReference)}
-                    key={element.id}
-                    // index={index}
-                    // downVoteHandler={() =>
-                    //     downVoteHandler(index, hookReference)
-                    // }
-                    hot={element.hot}
-                    imgSRC={element.imgSRC}
+                    title={mem.name}
+                    upVote={mem.upVote}
+                    downVote={mem.downVote}
+                    id={mem.id}
+                    key={mem.id}
+                    imgSRC={mem.imgSRC}
                 />
             ))}
         </>

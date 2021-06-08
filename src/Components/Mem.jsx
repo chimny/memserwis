@@ -6,9 +6,9 @@ export const Mem = (props) => {
         upVote,
         downVote,
         downVoteHandler,
-        index,
         upVoteHandler,
         imgSRC,
+        id,
     } = props;
 
     return (
@@ -21,8 +21,8 @@ export const Mem = (props) => {
             </div>
             <div>
                 {/* zastąpić index -> ID */}
-                <button onClick={() => upVoteHandler(index)}>UpVote</button>
-                <button onClick={() => downVoteHandler(index)}>DownVote</button>
+                <button onClick={() => upVoteHandler(id)}>UpVote</button>
+                <button onClick={() => downVoteHandler(id)}>DownVote</button>
             </div>
         </MemWrapper>
     );
