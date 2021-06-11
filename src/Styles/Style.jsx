@@ -23,7 +23,7 @@ export const MemWrapper = styled.div`
 // navigation
 
 export const Navigation = styled.nav`
-    /* position: fixed; */
+    position: fixed;
     width: 10vw;
     height: 100vh;
     background: rgb(221, 115, 129);
@@ -32,3 +32,8 @@ export const Navigation = styled.nav`
 export const Wrapper = styled.div`
     display: flex;
 `;
+
+// object to set activeTab in menu
+export const activeTab = {
+    color: "red",
+};

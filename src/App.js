@@ -3,15 +3,16 @@ import * as React from "react";
 import {
     BrowserRouter as Router,
     Route,
-    Link,
+    NavLink,
     Switch,
     Redirect,
 } from "react-router-dom";
 import {Hot} from "./Components/Hot";
 import {Regular} from "./Components/Regular";
+import {Star} from "./Components/Star";
 import {PageNotFound} from "./Components/PageNotFound";
 import {AppState} from "./Context/AppState";
-import {GlobalStyle, Navigation, Wrapper} from "./Styles/Style";
+import {GlobalStyle, Navigation, Wrapper, activeTab} from "./Styles/Style";
 
 function App() {
     return (
@@ -22,10 +23,22 @@ function App() {
                         <Navigation>
                             <ul>
                                 <li>
-                                    <Link to="/regular">Regular</Link>
+                                    <NavLink
+                                        to="/regular"
+                                        activeStyle={activeTab}
+                                    >
+                                        Regular
+                                    </NavLink>
                                 </li>
                                 <li>
-                                    <Link to="/hot">Hot</Link>
+                                    <NavLink to="/hot" activeStyle={activeTab}>
+                                        Hot
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/star" activeStyle={activeTab}>
+                                        Star
+                                    </NavLink>
                                 </li>
                             </ul>
                         </Navigation>
@@ -36,6 +49,9 @@ function App() {
                                 </Route>
                                 <Route path="/hot">
                                     <Hot />
+                                </Route>
+                                <Route path="/star">
+                                    <Star />
                                 </Route>
                                 <Route exact path="/">
                                     <Redirect to="/regular" />

@@ -10,6 +10,7 @@ export const AppState = (props) => {
             downVote: 0,
             id: "A",
             imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/t7OC4YmUU65nB9Rs.jpg",
+            star: true,
         },
         {
             name: "mem2",
@@ -17,6 +18,7 @@ export const AppState = (props) => {
             downVote: 0,
             id: "B",
             imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/1qEHO1byIHfoThhb.jpg",
+            star: false,
         },
         {
             name: "mem3",
@@ -24,6 +26,7 @@ export const AppState = (props) => {
             downVote: 0,
             id: "C",
             imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/tzgTaBd1Kvs6aMh7.jpg",
+            star: true,
         },
         {
             name: "mem4",
@@ -31,6 +34,7 @@ export const AppState = (props) => {
             downVote: 0,
             id: "D",
             imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/8AQqXgqpZ6PVrzDi.jpg",
+            star: false,
         },
     ]);
 
@@ -42,8 +46,14 @@ export const AppState = (props) => {
         return meme.upVote + meme.downVote <= 5;
     });
 
+    const starMemes = memes.filter((meme) => {
+        return meme.star;
+    });
+
     return (
-        <AppContext.Provider value={{memes, setMemes, topMemes, regularMemes}}>
+        <AppContext.Provider
+            value={{memes, setMemes, topMemes, regularMemes, starMemes}}
+        >
             {props.children}
         </AppContext.Provider>
     );

@@ -21,6 +21,7 @@ export const Mem = (props) => {
     return (
         <MemWrapper>
             <h3>{title}</h3>
+
             <img src={imgSRC} alt="mem" />
             <div>
                 Liczba upVote : {upVote}
@@ -29,6 +30,7 @@ export const Mem = (props) => {
             <div>
                 <button onClick={() => upVoteHandler(id)}>UpVote</button>
                 <button onClick={() => downVoteHandler(id)}>DownVote</button>
+                <button>Star</button>
             </div>
         </MemWrapper>
     );
