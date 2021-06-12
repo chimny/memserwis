@@ -19,11 +19,16 @@ export const Mem = (props) => {
     };
 
     const starHandler = (id) => {
-        const initialState = [...memes];
-        const updatedMem = initialState.find((mem) => mem.id === id);
-        const starupdate = updatedMem.star;
-        console.log(starupdate);
-        setMemes([...initialState, {...updatedMem, star: true}]);
+        // const initialState = [...memes];
+        // const updatedMem = initialState.find((mem) => mem.id === id);
+        // const starupdate = updatedMem.star;
+        // console.log(starupdate);
+        // // setMemes([...initialState, {...updatedMem, star: true}]);
+        setMemes((prevState) => {
+            return prevState.map((mem) => {
+                return mem.id === id ? {...mem, star: !mem.star} : mem;
+            });
+        });
     };
 
     return (
