@@ -16,6 +16,7 @@ export const Star = () => {
                     id={mem.id}
                     key={mem.id}
                     imgSRC={mem.imgSRC}
+                    star={mem.star}
                 />
             ))}
         </>

@@ -3,7 +3,7 @@ import {AppContext} from "../Context/AppContext";
 import {Mem} from "./Mem";
 
 export const Regular = () => {
-    const {memes, setMemes, regularMemes} = useContext(AppContext);
+    const {regularMemes} = useContext(AppContext);
 
     // zmodyfikować propsy
     return (
@@ -16,6 +16,7 @@ export const Regular = () => {
                     id={mem.id}
                     key={mem.id}
                     imgSRC={mem.imgSRC}
+                    star={mem.star}
                 />
             ))}
         </>
