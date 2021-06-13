@@ -8,17 +8,20 @@ export const Regular = () => {
     // zmodyfikować propsy
     return (
         <>
-            {regularMemes.map((mem) => (
-                <Mem
-                    title={mem.name}
-                    upVote={mem.upVote}
-                    downVote={mem.downVote}
-                    id={mem.id}
-                    key={mem.id}
-                    imgSRC={mem.imgSRC}
-                    star={mem.star}
-                />
-            ))}
+            {regularMemes.map((mem) => {
+                const {name, downVote, upVote, id, imgSRC, star} = mem;
+                return (
+                    <Mem
+                        title={name}
+                        upVote={upVote}
+                        downVote={downVote}
+                        id={id}
+                        key={id}
+                        imgSRC={imgSRC}
+                        star={star}
+                    />
+                );
+            })}
         </>
     );
 };
