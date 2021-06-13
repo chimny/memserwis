@@ -19,11 +19,6 @@ export const Mem = (props) => {
     };
 
     const starHandler = (id) => {
-        // const initialState = [...memes];
-        // const updatedMem = initialState.find((mem) => mem.id === id);
-        // const starupdate = updatedMem.star;
-        // console.log(starupdate);
-        // // setMemes([...initialState, {...updatedMem, star: true}]);
         setMemes((prevState) => {
             return prevState.map((mem) => {
                 return mem.id === id ? {...mem, star: !mem.star} : mem;
@@ -39,12 +34,13 @@ export const Mem = (props) => {
             <div>
                 <p>Liczba upVote : {upVote}</p>
                 <p> Liczba downVote : {downVote}</p>
-                <p>{star} </p>
             </div>
             <div>
                 <button onClick={() => upVoteHandler(id)}>UpVote</button>
                 <button onClick={() => downVoteHandler(id)}>DownVote</button>
-                <button onClick={() => starHandler(id)}>Star</button>
+                <button onClick={() => starHandler(id)}>
+                    {star ? "Remove star" : "Give star"}
+                </button>
             </div>
         </MemWrapper>
     );
