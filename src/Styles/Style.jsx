@@ -24,19 +24,21 @@ export const Navigation = styled.nav`
     justify-content: center;
     width: 15vw;
     height: 100%;
-    background: rgb(3, 170, 221);
+    background: rgb(19, 163, 207);
     font-size: 1.5rem;
+
     & ul {
-        margin: 0 auto;
+        padding: 0;
     }
     & li {
-        display: inline;
-
+        display: block;
+        /* height: 30px; */
+        padding: 10px 0;
         list-style: none;
         width: 100%;
         & a {
-            display: block;
-            width: 100%;
+            display: inline-block;
+            width: 15vw;
             margin: 50px 0;
             color: white;
             text-decoration: none;
