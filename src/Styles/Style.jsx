@@ -21,19 +21,23 @@ export const Navigation = styled.nav`
     position: fixed;
     width: 15vw;
     height: 100vh;
-    background: rgb(221, 115, 129);
+    background: rgb(3, 170, 221);
     font-size: 1.5rem;
     & ul {
         margin: 50% auto;
     }
     & li {
         display: block;
-        width: 100%;
         list-style: none;
         & a {
-            color: black;
+            display: block;
+            width: 100%;
+            color: white;
             text-decoration: none;
             font-weight: bold;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 `;
@@ -48,5 +52,6 @@ export const MemWrapper = styled.div`
 
 // object to set activeTab in menu
 export const activeTab = {
-    color: "red",
+    color: "black",
+    backgroundColor: "rgb(10, 218, 255)",
 };
