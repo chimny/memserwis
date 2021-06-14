@@ -5,7 +5,6 @@ import {Mem} from "./Mem";
 export const Star = () => {
     const {starMemes} = useContext(AppContext);
 
-    // zmodyfikować propsy
     return (
         <>
             {starMemes.map((mem) => {

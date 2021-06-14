@@ -10,6 +10,7 @@ import {
 import {Hot} from "./Components/Hot";
 import {Regular} from "./Components/Regular";
 import {Star} from "./Components/Star";
+import {MemCreator} from "./Components/MemCreator";
 import {PageNotFound} from "./Components/PageNotFound";
 import {AppState} from "./Context/AppState";
 import {GlobalStyle, Navigation, Wrapper, activeTab} from "./Styles/Style";
@@ -40,6 +41,14 @@ function App() {
                                         Star
                                     </NavLink>
                                 </li>
+                                <li>
+                                    <NavLink
+                                        to="/memCreator"
+                                        activeStyle={activeTab}
+                                    >
+                                        memCreator
+                                    </NavLink>
+                                </li>
                             </ul>
                         </Navigation>
                         <div>
@@ -55,6 +64,9 @@ function App() {
                                 </Route>
                                 <Route exact path="/">
                                     <Redirect to="/regular" />
+                                </Route>
+                                <Route path="/memCreator">
+                                    <MemCreator />
                                 </Route>
                                 <Route path="*">
                                     <PageNotFound />

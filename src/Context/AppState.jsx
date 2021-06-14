@@ -1,14 +1,14 @@
 import {useState} from "react";
 import {AppContext} from "./AppContext";
+import uuid from "react-uuid";
 
-// wywalić hot w objekcie
 export const AppState = (props) => {
     const [memes, setMemes] = useState([
         {
             name: "mem1",
             upVote: 0,
             downVote: 0,
-            id: "A",
+            id: `${uuid()}`,
             imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/t7OC4YmUU65nB9Rs.jpg",
             star: true,
         },
@@ -24,7 +24,7 @@ export const AppState = (props) => {
             name: "mem3",
             upVote: 0,
             downVote: 0,
-            id: "C",
+            id: `${uuid()}`,
             imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/tzgTaBd1Kvs6aMh7.jpg",
             star: true,
         },
@@ -32,7 +32,7 @@ export const AppState = (props) => {
             name: "mem4",
             upVote: 0,
             downVote: 0,
-            id: "D",
+            id: `${uuid()}`,
             imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/8AQqXgqpZ6PVrzDi.jpg",
             star: false,
         },

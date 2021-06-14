@@ -5,7 +5,6 @@ import {Mem} from "./Mem";
 export const Regular = () => {
     const {regularMemes} = useContext(AppContext);
 
-    // zmodyfikować propsy
     return (
         <>
             {regularMemes.map((mem) => {
