@@ -19,19 +19,25 @@ export const Wrapper = styled.div`
 // navigation
 export const Navigation = styled.nav`
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 15vw;
-    height: 100vh;
+    height: 100%;
     background: rgb(3, 170, 221);
     font-size: 1.5rem;
     & ul {
-        margin: 50% auto;
+        margin: 0 auto;
     }
     & li {
-        display: block;
+        display: inline;
+
         list-style: none;
+        width: 100%;
         & a {
             display: block;
             width: 100%;
+            margin: 50px 0;
             color: white;
             text-decoration: none;
             font-weight: bold;
