@@ -51,6 +51,7 @@ function App() {
                                 </li>
                             </ul>
                         </Navigation>
+
                         <div>
                             <Switch>
                                 <Route path="/regular">
