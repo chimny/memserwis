@@ -24,10 +24,10 @@ import { theme } from "./Styles/theme";
 function App() {
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-        <Burger />
-        <Router>
-          <AppState>
+      <AppState>
+        <ThemeProvider theme={theme}>
+          <Burger />
+          <Router>
             <Wrapper>
               <Navigation>
                 <ul>
@@ -77,10 +77,10 @@ function App() {
                 </Switch>
               </div>
             </Wrapper>
-          </AppState>
-        </Router>
-        <GlobalStyle />
-      </ThemeProvider>
+          </Router>
+          <GlobalStyle />
+        </ThemeProvider>
+      </AppState>
     </div>
   );
 }

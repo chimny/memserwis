@@ -1,5 +1,6 @@
 import styled from "styled-components";
-
+import React, {useContext} from "react";
+import {AppContext} from "../../Context/AppContext";
 
 const StyledBurger = styled.button`
   position: absolute;
@@ -23,7 +24,7 @@ const StyledBurger = styled.button`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: ${({ theme }) => theme.primaryDark};
+    background: ${props => props.open ? ({ theme }) => theme.primaryDark : ({ theme }) => theme.primaryLight};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -32,8 +33,13 @@ const StyledBurger = styled.button`
 `;
 
 export const Burger = () => {
+ const {open, setOpen} = useContext(AppContext);
+
+ const openHandler= ()=> {
+     setOpen((openState)=>!openState);
+ }
   return (
-    <StyledBurger>
+    <StyledBurger onClick={openHandler} open={open}>
       <div />
       <div />
       <div />

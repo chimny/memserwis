@@ -38,6 +38,8 @@ export const AppState = (props) => {
         },
     ]);
 
+    const [open, setOpen] = useState(false);
+
     const topMemes = memes.filter((meme) => {
         return meme.upVote + meme.downVote > 5;
     });
@@ -52,7 +54,7 @@ export const AppState = (props) => {
 
     return (
         <AppContext.Provider
-            value={{memes, setMemes, topMemes, regularMemes, starMemes}}
+            value={{memes, setMemes, topMemes, regularMemes, starMemes, open,setOpen}}
         >
             {props.children}
         </AppContext.Provider>
