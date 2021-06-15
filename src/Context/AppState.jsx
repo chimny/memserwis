@@ -2,7 +2,6 @@ import {useState} from "react";
 import {AppContext} from "./AppContext";
 import uuid from "react-uuid";
 
-
 export const AppState = (props) => {
     const [memes, setMemes] = useState([
         {
@@ -39,9 +38,7 @@ export const AppState = (props) => {
         },
     ]);
 
-    const [open, setOpen] = useState(false);
-
-
+    const [open, setOpen] = useState(true);
 
     const topMemes = memes.filter((meme) => {
         return meme.upVote + meme.downVote > 5;
@@ -57,7 +54,15 @@ export const AppState = (props) => {
 
     return (
         <AppContext.Provider
-            value={{memes, setMemes, topMemes, regularMemes, starMemes, open,setOpen}}
+            value={{
+                memes,
+                setMemes,
+                topMemes,
+                regularMemes,
+                starMemes,
+                open,
+                setOpen,
+            }}
         >
             {props.children}
         </AppContext.Provider>
