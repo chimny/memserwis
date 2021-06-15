@@ -30,7 +30,7 @@ function App() {
           <Burger />
           <Router>
             <Wrapper>
-              {/* <Navigation> */}
+              <Navigation>
               <ul>
                 <li>
                   <NavLink to="/regular" activeClassName="active">
@@ -53,7 +53,7 @@ function App() {
                   </NavLink>
                 </li>
               </ul>
-              {/* </Navigation> */}
+              </Navigation>
 
               <div>
                 <Switch>

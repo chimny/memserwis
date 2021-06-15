@@ -1,5 +1,5 @@
-import { StyledNavigation } from "./StyledNavigation"
+import {StyledNavigation} from "./StyledNavigation";
 
-
-
-export const Navigation = ()=> <StyledNavigation/>
+export const Navigation = () => {
+    return <StyledNavigation />;
+};
