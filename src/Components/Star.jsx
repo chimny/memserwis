@@ -2,12 +2,12 @@ import React, {useContext} from "react";
 import {AppContext} from "../Context/AppContext";
 import {Mem} from "./Mem";
 
-export const Regular = () => {
-    const {regularMemes} = useContext(AppContext);
+export const Star = () => {
+    const {starMemes} = useContext(AppContext);
 
     return (
         <>
-            {regularMemes.map((mem) => {
+            {starMemes.map((mem) => {
                 const {name, downVote, upVote, id, imgSRC, star} = mem;
                 return (
                     <Mem
