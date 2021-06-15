@@ -1,10 +1,39 @@
 import {StyledNavigation} from "./StyledNavigation";
 import {useContext} from "react";
 import {AppContext} from "../../Context/AppContext";
+import {NavLink} from "react-router-dom";
+import {Burger} from "./Burger/Burger";
 
-export const Navigation = (props) => {
-    const {memes, setMemes} = useContext(AppContext);
-    const {open} = props;
+export const Navigation = () => {
+    const {open} = useContext(AppContext);
 
-    return <StyledNavigation open={open} />;
+    return (
+        <>
+            <Burger />
+            <StyledNavigation open={open}>
+                <ul>
+                    <li>
+                        <NavLink to="/regular" activeClassName="active">
+                            Regular
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/hot" activeClassName="active">
+                            Hot
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/star" activeClassName="active">
+                            Star
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/memCreator" activeClassName="active">
+                            memCreator
+                        </NavLink>
+                    </li>
+                </ul>
+            </StyledNavigation>
+        </>
+    );
 };

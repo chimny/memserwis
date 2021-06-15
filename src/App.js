@@ -3,7 +3,6 @@ import * as React from "react";
 import {
     BrowserRouter as Router,
     Route,
-    NavLink,
     Switch,
     Redirect,
 } from "react-router-dom";
@@ -18,7 +17,6 @@ import {AppState} from "./Context/AppState";
 // Styles
 import {GlobalStyle, Wrapper} from "./GlobalStyles/Style";
 import {Navigation} from "./Components/Navigation/Navigation";
-import {Burger} from "./Components/Navigation/Burger/Burger";
 import {ThemeProvider} from "styled-components";
 import {theme} from "./GlobalStyles/theme";
 
@@ -29,44 +27,7 @@ function App() {
                 <ThemeProvider theme={theme}>
                     <Router>
                         <Wrapper>
-                            <Burger />
-                            <Navigation>
-                                <ul>
-                                    <li>
-                                        <NavLink
-                                            to="/regular"
-                                            activeClassName="active"
-                                        >
-                                            Regular
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink
-                                            to="/hot"
-                                            activeClassName="active"
-                                        >
-                                            Hot
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink
-                                            to="/star"
-                                            activeClassName="active"
-                                        >
-                                            Star
-                                        </NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink
-                                            to="/memCreator"
-                                            activeClassName="active"
-                                        >
-                                            memCreator
-                                        </NavLink>
-                                    </li>
-                                </ul>
-                            </Navigation>
-
+                            <Navigation />
                             <div>
                                 <Switch>
                                     <Route path="/regular">

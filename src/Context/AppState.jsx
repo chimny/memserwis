@@ -34,11 +34,11 @@ export const AppState = (props) => {
             downVote: 0,
             id: `${uuid()}`,
             imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/8AQqXgqpZ6PVrzDi.jpg",
-            star: false,
+            star: true,
         },
     ]);
 
-    const [open, setOpen] = useState(true);
+    const [open, setOpen] = useState(false);
 
     const topMemes = memes.filter((meme) => {
         return meme.upVote + meme.downVote > 5;
