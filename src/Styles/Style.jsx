@@ -1,65 +1,71 @@
 import styled from "styled-components";
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from "styled-components";
 
 // global styles
 
 export const GlobalStyle = createGlobalStyle`
-    body {
-    text-align: center;
-    font-family: 'roboto';
+    html, body {
     margin: 0;
-    }
+    padding: 0;
+    text-align:center;
+    background: ${({ theme }) => theme.primaryLight};
+    color: ${({ theme }) => theme.primaryLight};
+  }
+  *, *::after, *::before {
+    box-sizing: border-box;
+  }
 `;
 
 // wrapper for navigation and MemWrapper
 export const Wrapper = styled.div`
-    display: flex;
+  display: flex;
 `;
 
 // navigation
 export const Navigation = styled.nav`
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 15vw;
-    height: 100%;
-    background: rgb(19, 163, 207);
-    font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: ${({ theme }) => theme.primary};
+  height: 100vh;
+  text-align: left;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease-in-out;
 
-    & ul {
-        padding: 0;
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    /* width: 100%; */
+  }
+
+ul{
+  li{
+    list-style: none;
+    a {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5rem;
+    color: ${({ theme }) => theme.primaryDark};
+    text-decoration: none;
+    transition: color 0.3s linear;
+
+     &:hover,&.active {
+       text-decoration:underline;
+      color: ${({ theme }) => theme.primaryLight};
     }
-    & li {
-        display: block;
-        /* height: 30px; */
-        padding: 10px 0;
-        list-style: none;
-        width: 100%;
-        & a {
-            display: inline-block;
-            width: 15vw;
-            margin: 50px 0;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-            &:hover {
-                text-decoration: underline;
-            }
-        }
-    }
+      }
+  }
+}
+
 `;
 
 // styles for single mem
 export const MemWrapper = styled.div`
-    background: #87a4da;
-    padding: 20px 0;
-    width: 80vw;
-    margin: 0 0 0 auto;
+  background: #87a4da;
+  padding: 20px 0;
+  width: 80vw;
+  margin: 0 0 0 auto;
 `;
 
-// object to set activeTab in menu
-export const activeTab = {
-    color: "black",
-    backgroundColor: "rgb(10, 218, 255)",
-};
