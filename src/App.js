@@ -8,11 +8,11 @@ import {
   Redirect,
 } from "react-router-dom";
 // Routes
-import { Hot } from "./Components/Hot";
-import { Regular } from "./Components/Regular";
-import { Star } from "./Components/Star";
-import { MemCreator } from "./Components/MemCreator";
-import { PageNotFound } from "./Components/PageNotFound";
+import { Hot } from "./Components/Routes/Hot";
+import { Regular } from "./Components/Routes/Regular";
+import { Star } from "./Components/Routes/Star";
+import { MemCreator } from "./Components/Routes/MemCreator";
+import { PageNotFound } from "./Components/Routes/PageNotFound";
 // State
 import { AppState } from "./Context/AppState";
 // Styles

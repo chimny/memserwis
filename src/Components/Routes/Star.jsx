@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
-import {AppContext} from "../Context/AppContext";
-import {Mem} from "./Mem";
+import {AppContext} from "../../Context/AppContext";
+import {Mem} from "../Mem/Mem";
 
 export const Star = () => {
     const {starMemes} = useContext(AppContext);

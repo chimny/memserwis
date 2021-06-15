@@ -1,6 +1,6 @@
-import {MemWrapper} from "../Styles/Style";
+import {StyledMem} from "./StyledMem";
 import React, {useContext} from "react";
-import {AppContext} from "../Context/AppContext";
+import {AppContext} from "../../Context/AppContext";
 
 export const Mem = (props) => {
     const {memes, setMemes} = useContext(AppContext);
@@ -27,7 +27,7 @@ export const Mem = (props) => {
     };
 
     return (
-        <MemWrapper>
+        <StyledMem>
             <h3>{title}</h3>
 
             <img src={imgSRC} alt="mem" />
@@ -42,6 +42,6 @@ export const Mem = (props) => {
                     {star ? "Remove star" : "Give star"}
                 </button>
             </div>
-        </MemWrapper>
+        </StyledMem>
     );
 };

@@ -1,8 +1,8 @@
 import uuid from "react-uuid";
-import {MemWrapper} from "../Styles/Style";
+import {MemWrapper} from "../../Styles/Style";
 
 import React, {useContext} from "react";
-import {AppContext} from "../Context/AppContext";
+import {AppContext} from "../../Context/AppContext";
 
 export const MemCreator = () => {
     const {setMemes} = useContext(AppContext);
