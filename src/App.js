@@ -16,10 +16,11 @@ import { PageNotFound } from "./Components/Routes/PageNotFound";
 // State
 import { AppState } from "./Context/AppState";
 // Styles
-import { GlobalStyle, Navigation, Wrapper } from "./Styles/Style";
-import { Burger } from "./Styles/Burger/StyledBurger";
+import { GlobalStyle, Wrapper } from "./GlobalStyles/Style";
+import { Navigation } from "./Components/Navigation/Navigation";
+import { Burger } from "./Components/Navigation/Burger/Burger";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./Styles/theme";
+import { theme } from "./GlobalStyles/theme";
 
 function App() {
   return (
@@ -29,30 +30,30 @@ function App() {
           <Burger />
           <Router>
             <Wrapper>
-              <Navigation>
-                <ul>
-                  <li>
-                    <NavLink to="/regular" activeClassName="active">
-                      Regular
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/hot" activeClassName="active">
-                      Hot
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/star" activeClassName="active">
-                      Star
-                    </NavLink>
-                  </li>
-                  <li>
-                    <NavLink to="/memCreator" activeClassName="active">
-                      memCreator
-                    </NavLink>
-                  </li>
-                </ul>
-              </Navigation>
+              {/* <Navigation> */}
+              <ul>
+                <li>
+                  <NavLink to="/regular" activeClassName="active">
+                    Regular
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/hot" activeClassName="active">
+                    Hot
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/star" activeClassName="active">
+                    Star
+                  </NavLink>
+                </li>
+                <li>
+                  <NavLink to="/memCreator" activeClassName="active">
+                    memCreator
+                  </NavLink>
+                </li>
+              </ul>
+              {/* </Navigation> */}
 
               <div>
                 <Switch>

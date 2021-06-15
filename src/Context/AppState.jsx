@@ -2,6 +2,7 @@ import {useState} from "react";
 import {AppContext} from "./AppContext";
 import uuid from "react-uuid";
 
+
 export const AppState = (props) => {
     const [memes, setMemes] = useState([
         {
@@ -39,6 +40,8 @@ export const AppState = (props) => {
     ]);
 
     const [open, setOpen] = useState(false);
+
+
 
     const topMemes = memes.filter((meme) => {
         return meme.upVote + meme.downVote > 5;

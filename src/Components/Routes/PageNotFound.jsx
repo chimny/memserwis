@@ -1,3 +1,5 @@
+import { StyledRoute } from "./StyledRoute";
+
 export const PageNotFound = () => {
-    return <div>page not found</div>;
+    return <StyledRoute>page not found</StyledRoute>;
 };

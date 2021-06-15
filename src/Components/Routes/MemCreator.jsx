@@ -1,8 +1,7 @@
 import uuid from "react-uuid";
-import {MemWrapper} from "../../Styles/Style";
-
 import React, {useContext} from "react";
 import {AppContext} from "../../Context/AppContext";
+import { StyledRoute } from "./StyledRoute";
 
 export const MemCreator = () => {
     const {setMemes} = useContext(AppContext);
@@ -29,7 +28,7 @@ export const MemCreator = () => {
     };
 
     return (
-        <MemWrapper>
+        <StyledRoute>
             <form onSubmit={createMemHandler}>
                 <input type="text" placeholder="Title" id="title" />
                 <input
@@ -39,6 +38,6 @@ export const MemCreator = () => {
                 />
                 <button>Add new mem</button>
             </form>
-        </MemWrapper>
+        </StyledRoute>
     );
 };
