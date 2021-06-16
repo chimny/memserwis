@@ -15,7 +15,7 @@ import { PageNotFound } from "./Components/Routes/PageNotFound";
 // State
 import { AppState } from "./Context/AppState";
 // Styles
-import { GlobalStyle, Wrapper } from "./GlobalStyles/Style";
+import { GlobalStyle } from "./GlobalStyles/GlobalStyle";
 import { Navigation } from "./Components/Navigation/Navigation";
 import { ThemeProvider } from "styled-components";
 import { theme } from "./GlobalStyles/theme";
