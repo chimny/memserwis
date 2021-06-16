@@ -29,7 +29,6 @@ export const Mem = (props) => {
     return (
         <StyledMem>
             <h3>{title}</h3>
-
             <img src={imgSRC} alt="mem" />
             <div>
                 <p>Liczba upVote : {upVote}</p>
