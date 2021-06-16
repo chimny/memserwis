@@ -16,9 +16,4 @@ export const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// wrapper for navigation and MemWrapper
-export const Wrapper = styled.div`
-  display: flex;
-`;
-
 
