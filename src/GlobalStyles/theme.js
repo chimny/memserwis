@@ -5,4 +5,6 @@ export const theme = {
   secondary: "gray",
   primaryHover: "#343078",
   mobile: "576px",
+  memBgc: "gray",
+  routeBgc: "rgb(120,120,120)",
 };
