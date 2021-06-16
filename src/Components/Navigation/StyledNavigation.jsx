@@ -45,5 +45,6 @@ ul{
 
 export const StyledMenu =styled.div`
 position:fixed;
+z-index: 10;
 
 `

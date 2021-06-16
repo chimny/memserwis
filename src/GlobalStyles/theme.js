@@ -7,4 +7,6 @@ export const theme = {
   mobile: "576px",
   memBgc: "#EFFFFA",
   routeBgc: "rgb(120,120,120)",
+  withStar: "pink",
+  nonStar: "white",
 };

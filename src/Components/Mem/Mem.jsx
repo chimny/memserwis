@@ -2,6 +2,9 @@ import {StyledMem} from "./StyledMem";
 import React, {useContext} from "react";
 import {AppContext} from "../../Context/AppContext";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart, faThumbsUp } from '@fortawesome/free-solid-svg-icons'
+
 export const Mem = (props) => {
     const {memes, setMemes} = useContext(AppContext);
     const {title, upVote, downVote, imgSRC, id, star} = props;
@@ -27,19 +30,15 @@ export const Mem = (props) => {
     };
 
     return (
-        <StyledMem>
-            <h3>{title}</h3>
-            <img src={imgSRC} alt="mem" />
-            <div>
-                <p>Liczba upVote : {upVote}</p>
-                <p> Liczba downVote : {downVote}</p>
-            </div>
-            <div>
-                <button onClick={() => upVoteHandler(id)}>UpVote</button>
-                <button onClick={() => downVoteHandler(id)}>DownVote</button>
-                <button onClick={() => starHandler(id)}>
-                    {star ? "Remove star" : "Give star"}
+        <StyledMem star={star}> 
+            <h3>{title}</h3> <button className={'starButton'} onClick={() => starHandler(id)}>
+                    { <FontAwesomeIcon icon={faHeart} /> } 
                 </button>
+            <img src={imgSRC} alt="mem" />
+       
+            <div>
+                <button onClick={() => upVoteHandler(id)}>{ <FontAwesomeIcon icon={faThumbsUp} /> } {upVote}</button>
+                <button onClick={() => downVoteHandler(id)}><FontAwesomeIcon icon={faThumbsUp} rotation={180}/> {downVote}</button>
             </div>
         </StyledMem>
     );
