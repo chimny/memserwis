@@ -26,31 +26,29 @@ function App() {
       <AppState>
         <ThemeProvider theme={theme}>
           <Router>
-            <Wrapper>
-              <Navigation />
-              <div>
-                <Switch>
-                  <Route path="/regular">
-                    <Regular />
-                  </Route>
-                  <Route path="/hot">
-                    <Hot />
-                  </Route>
-                  <Route path="/star">
-                    <Star />
-                  </Route>
-                  <Route exact path="/">
-                    <Redirect to="/regular" />
-                  </Route>
-                  <Route path="/memCreator">
-                    <MemCreator />
-                  </Route>
-                  <Route path="*">
-                    <PageNotFound />
-                  </Route>
-                </Switch>
-              </div>
-            </Wrapper>
+            <Navigation />
+            <div>
+              <Switch>
+                <Route path="/regular">
+                  <Regular />
+                </Route>
+                <Route path="/hot">
+                  <Hot />
+                </Route>
+                <Route path="/star">
+                  <Star />
+                </Route>
+                <Route exact path="/">
+                  <Redirect to="/regular" />
+                </Route>
+                <Route path="/memCreator">
+                  <MemCreator />
+                </Route>
+                <Route path="*">
+                  <PageNotFound />
+                </Route>
+              </Switch>
+            </div>
           </Router>
           <GlobalStyle />
         </ThemeProvider>
