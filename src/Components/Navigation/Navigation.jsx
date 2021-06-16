@@ -1,4 +1,4 @@
-import {StyledNavigation} from "./StyledNavigation";
+import {StyledNavigation,StyledMenu} from "./StyledNavigation";
 import {useContext} from "react";
 import {AppContext} from "../../Context/AppContext";
 import {NavLink} from "react-router-dom";
@@ -8,7 +8,7 @@ export const Navigation = () => {
     const {open} = useContext(AppContext);
 
     return (
-        <>
+        <StyledMenu>
             <Burger />
             <StyledNavigation open={open}>
                 <ul>
@@ -34,6 +34,6 @@ export const Navigation = () => {
                     </li>
                 </ul>
             </StyledNavigation>
-        </>
+        </StyledMenu>
     );
 };

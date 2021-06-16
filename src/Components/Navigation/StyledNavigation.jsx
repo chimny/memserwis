@@ -36,3 +36,6 @@ export const StyledNavigation = styled.nav`
         }
     }
 `;
+
+
+export const StyledMenu = styled.div`position: fixed;`
