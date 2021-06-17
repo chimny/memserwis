@@ -13,12 +13,13 @@ export const StyledMem = styled.div`
   }
 
   .starButton{
+    box-sizing: border-box;
     position:absolute;
     top: 1rem;
     right: 1.5rem;
     color:${props => props.star ? theme.withStar:theme.nonStar};
     background:transparent;
-    border: none;
+    border:none;
     font-size: 2rem;
     transition: 0.3s linear;
   }

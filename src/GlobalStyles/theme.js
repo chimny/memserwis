@@ -8,5 +8,5 @@ export const theme = {
   memBgc: "#EFFFFA",
   routeBgc: "rgb(120,120,120)",
   withStar: "pink",
-  nonStar: "white",
+  nonStar: "gray",
 };
