@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# MemSerwis
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React-based app with memes stored by arrary which includes basic information (img url, title, upVotes, downvotes, and star).
+Data flow is managed via useContext hook (all global states can be found in Context folder)
 
-## Available Scripts
 
-In the project directory, you can run:
+## Used technology
+* React (version 17.0.2)
+* React-router (5.2.0)
+* Styled-components (5.3.0)
+* FontAwesome (5.15.3)
 
-### `npm start`
+## How it works
+* Memes which diference between upVotes and downVotes is greater than 5 are moved to Hot Route
+* Each Meme include star button - if the heart turns pink it can be seen in ,,Star" route"
+* It's possible to include new Meme via Meme Creator route (image is kept without local storage - img url is necessary)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Components folder include three major information
+* Mem which is a blueprint to display single mem
+* Navigation responsible for route menu and animation
+* Particular Routes which includes Memes (Hot, Route, Star) + Meme Creator. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Styling
+* All the styling is made with styled-component usage
+* Styled components are kept in folder which styling regards to (e.g. in Mem folder you can find StyledMem file which includes styling)
+* Common styling data (e.g. main theme color) are kept by variables which are available in globalStyle folder (theme file)
+* Within globalStyle folder you can also find GlobalStyle component which is responsible for global styling
