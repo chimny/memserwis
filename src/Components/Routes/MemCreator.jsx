@@ -1,33 +1,28 @@
 import uuid from "react-uuid";
-import React, {useState, useContext} from "react";
+import React, {useContext} from "react";
 import {AppContext} from "../../Context/AppContext";
 import {StyledRoute} from "./StyledRoute";
 
 export const MemCreator = () => {
-    const {setMemes} = useContext(AppContext);
-    const [form, setForm] = useState({
-        title: "Loki",
-        imgSRC: "https://gfx.radiozet.pl/var/radiozetsg/storage/images/seriale/loki-jest-postacia-lgbt-nowa-zapowiedz-serialu-marvela/16348844-1-pol-PL/Nowa-zapowiedz-serialu-Marvela-potwierdza-ze-Loki-jest-postacia-LGBT-WIDEO_article.jpg",
-    });
+    const {setMemes, form, setForm} = useContext(AppContext);
 
-    const NewMemHandler = (textValue, imgValue) => {
+    const NewMemHandler = (name, imgSrc) => {
         const NewMem = {
-            name: textValue,
+            name: name,
             upVote: 0,
             downVote: 0,
             id: `${uuid()}`,
-            imgSRC: imgValue,
+            imgSRC: imgSrc,
             star: false,
         };
         setMemes((prevState) => [NewMem, ...prevState]);
         alert("dodano nowy mem");
     };
 
+    // rozbudować funkcję
     const createMemHandler = (e) => {
         e.preventDefault();
-        const textValue = document.getElementById("title").value;
-        const imgValue = document.getElementById("imgSrc").value;
-        return NewMemHandler(textValue, imgValue);
+        NewMemHandler(form.title, form.imgSRC);
     };
 
     return (
@@ -38,12 +33,14 @@ export const MemCreator = () => {
                     placeholder="Title"
                     id="title"
                     value={form.title}
+                    onChange={(e) => setForm({...form, title: e.target.value})}
                 />
                 <input
                     type="text"
                     placeholder="IMG SRC (enter URL)"
                     id="imgSrc"
                     value={form.imgSRC}
+                    onChange={(e) => setForm({...form, imgSRC: e.target.value})}
                 />
                 <button>Add new mem</button>
             </form>

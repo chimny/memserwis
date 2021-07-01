@@ -38,6 +38,11 @@ export const AppState = (props) => {
         },
     ]);
 
+    const [form, setForm] = useState({
+        title: "Loki",
+        imgSRC: "https://gfx.radiozet.pl/var/radiozetsg/storage/images/seriale/loki-jest-postacia-lgbt-nowa-zapowiedz-serialu-marvela/16348844-1-pol-PL/Nowa-zapowiedz-serialu-Marvela-potwierdza-ze-Loki-jest-postacia-LGBT-WIDEO_article.jpg",
+    });
+
     const [open, setOpen] = useState(false);
 
     const topMemes = memes.filter((meme) => {
@@ -62,6 +67,8 @@ export const AppState = (props) => {
                 starMemes,
                 open,
                 setOpen,
+                form,
+                setForm,
             }}
         >
             {props.children}
