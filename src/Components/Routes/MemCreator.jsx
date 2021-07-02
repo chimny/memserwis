@@ -11,7 +11,7 @@ export const MemCreator = () => {
             name: name,
             upVote: 0,
             downVote: 0,
-            id: `${uuid()}`,
+            id: uuid(),
             imgSRC: imgSrc,
             star: false,
         };
@@ -23,11 +23,13 @@ export const MemCreator = () => {
     const createMemHandler = (e) => {
         e.preventDefault();
         NewMemHandler(form.title, form.imgSRC);
+        setForm({title: "", imgSRC: ""});
     };
 
     return (
         <StyledRoute>
             <form onSubmit={createMemHandler}>
+                <h1>MEMCREATOR</h1>
                 <input
                     type="text"
                     placeholder="Title"
