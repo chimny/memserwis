@@ -19,6 +19,7 @@ export const StyledMem = styled.div`
         height: 3rem;
 
         * {
+            cursor: pointer;
             background: transparent;
             border: none;
             font-size: 2rem;
