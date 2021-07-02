@@ -29,7 +29,7 @@ export const MemCreator = () => {
     return (
         <StyledRoute>
             <form onSubmit={createMemHandler}>
-                <h1>MEMCREATOR</h1>
+                <h2>MEMCREATOR</h2>
                 <input
                     type="text"
                     placeholder="Title"
