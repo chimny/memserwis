@@ -10,15 +10,19 @@ export const Mem = (props) => {
     const {title, upVote, downVote, imgSRC, id, star} = props;
 
     const upVoteHandler = (id) => {
-        const initialState = [...memes];
-        const updatedMem = initialState.find((mem) => mem.id === id);
-        setMemes([updatedMem.upVote++, ...initialState]);
+        setMemes((prevState) => {
+            return prevState.map((mem) => {
+                return mem.id === id ? {...mem, upVote: mem.upVote++} : mem;
+            });
+        });
     };
 
     const downVoteHandler = (id) => {
-        const initialState = [...memes];
-        const updatedMem = initialState.find((mem) => mem.id === id);
-        setMemes([updatedMem.downVote--, ...initialState]);
+        setMemes((prevState) => {
+            return prevState.map((mem) => {
+                return mem.id === id ? {...mem, downVote: mem.downVote--} : mem;
+            });
+        });
     };
 
     const starHandler = (id) => {
