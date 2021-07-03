@@ -17,25 +17,26 @@ export const StyledForm = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: gray;
+    background-color: ${theme.primary};
     width: 50%;
     height: 50vh;
     input {
         display: block;
         width: 50%;
-        margin: 2rem auto;
+        margin: 1rem auto;
         text-align: center;
     }
     button {
-        background-color: ${theme.primary};
+        background-color: ${theme.primaryDark};
         color: ${theme.primaryLight};
-        border: none;
-        font-size: 2rem;
+        border: 1px solid black;
+        font-size: 1.5rem;
         cursor: pointer;
         transition: 0.2s linear;
 
         &:hover {
             color: ${theme.primaryDark};
+            background: ${theme.secondary};
         }
     }
 `;

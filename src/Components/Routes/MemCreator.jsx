@@ -43,7 +43,7 @@ export const MemCreator = () => {
                     value={form.imgSRC}
                     onChange={(e) => setForm({...form, imgSRC: e.target.value})}
                 />
-                <button>Add new mem</button>
+                <button>add mem</button>
             </StyledForm>
         </StyledRoute>
     );

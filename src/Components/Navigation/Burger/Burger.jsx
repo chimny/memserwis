@@ -15,7 +15,7 @@ export const Burger = () => {
 
     return (
         <StyledBurger onClick={openHandler} open={open}>
-            <button> {<FontAwesomeIcon icon={faBars} />}</button>
+            {<FontAwesomeIcon icon={faBars} />}
         </StyledBurger>
     );
 };

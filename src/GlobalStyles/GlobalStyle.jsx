@@ -7,7 +7,6 @@ export const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
     margin: 0;
     padding: 0;
-  
     text-align:center;
     background: ${({theme}) => theme.primaryLight};
     color: ${({theme}) => theme.primaryLight};

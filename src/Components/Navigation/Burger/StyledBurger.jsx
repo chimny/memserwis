@@ -14,17 +14,15 @@ export const StyledBurger = styled.button`
     cursor: pointer;
     padding: 0;
     z-index: 1;
-    button {
-        border: none;
-        background-color: transparent;
-        cursor: pointer;
-        font-size: 2rem;
-        color: ${(props) =>
-            props.open
-                ? ({theme}) => theme.primaryDark
-                : ({theme}) => theme.primary};
-        transition: all 0.3s linear;
-        position: relative;
-        transform-origin: 1px;
-    }
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 2rem;
+    color: ${(props) =>
+        props.open
+            ? ({theme}) => theme.primaryDark
+            : ({theme}) => theme.primary};
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
 `;
