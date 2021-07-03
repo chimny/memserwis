@@ -63,7 +63,7 @@ export const AppState = (props) => {
     const upVoteHandler = (id) => {
         setMemes((prevState) => {
             return prevState.map((mem) => {
-                return mem.id === id ? {...mem, upVote: mem.upVote++} : mem;
+                return mem.id === id ? {...mem, upVote: ++mem.upVote} : mem;
             });
         });
     };
@@ -71,7 +71,7 @@ export const AppState = (props) => {
     const downVoteHandler = (id) => {
         setMemes((prevState) => {
             return prevState.map((mem) => {
-                return mem.id === id ? {...mem, downVote: mem.downVote--} : mem;
+                return mem.id === id ? {...mem, downVote: --mem.downVote} : mem;
             });
         });
     };
