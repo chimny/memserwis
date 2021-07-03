@@ -20,6 +20,11 @@ export const StyledForm = styled.form`
     background-color: ${theme.primary};
     width: 50%;
     height: 50vh;
+
+    @media (max-width: ${({theme}) => theme.mobile}) {
+        width: 75%;
+    }
+
     input {
         display: block;
         width: 50%;
