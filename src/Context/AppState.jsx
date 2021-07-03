@@ -60,18 +60,46 @@ export const AppState = (props) => {
         return meme.star;
     });
     // voting handlers
-    const upVoteHandler = (id) => {
-        setMemes((prevState) => {
-            return prevState.map((mem) => {
-                return mem.id === id ? {...mem, upVote: ++mem.upVote} : mem;
-            });
-        });
-    };
+
+    // to działa
+    // const downVoteHandler = (id) => {
+    //     setMemes((prevState) => {
+    //         return prevState.map((mem) => {
+    //             if (mem.id === id) {
+    //                 if (mem.downVote === 0) {
+    //                     return {...mem, downVote: --mem.downVote};
+    //                 } else return {...mem, downVote: mem.downVote--};
+    //             } else return mem;
+    //         });
+    //     });
+    // };
 
     const downVoteHandler = (id) => {
         setMemes((prevState) => {
             return prevState.map((mem) => {
-                return mem.id === id ? {...mem, downVote: --mem.downVote} : mem;
+                if (mem.id === id) {
+                    switch (mem.downVote) {
+                        case 0:
+                            return {...mem, downVote: --mem.downVote};
+                        default:
+                            return {...mem, downVote: mem.downVote--};
+                    }
+                } else return mem;
+            });
+        });
+    };
+
+    const upVoteHandler = (id) => {
+        setMemes((prevState) => {
+            return prevState.map((mem) => {
+                if (mem.id === id) {
+                    switch (mem.upVote) {
+                        case 0:
+                            return {...mem, upVote: ++mem.upVote};
+                        default:
+                            return {...mem, upVote: mem.upVote++};
+                    }
+                } else return mem;
             });
         });
     };

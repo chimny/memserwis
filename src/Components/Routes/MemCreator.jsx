@@ -19,7 +19,6 @@ export const MemCreator = () => {
         alert("dodano nowy mem");
     };
 
-    // rozbudować funkcję
     const createMemHandler = (e) => {
         e.preventDefault();
         NewMemHandler(form.title, form.imgSRC);
