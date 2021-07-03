@@ -7,6 +7,12 @@ export const StyledMem = styled.div`
     color: ${theme.primaryDark};
     width: 50vw;
     margin: 0 auto 2rem auto;
+
+    @media (max-width: ${({theme}) => theme.mobile}) {
+        width: 75vw;
+        padding: 0;
+    }
+
     h3 {
         text-transform: uppercase;
     }
