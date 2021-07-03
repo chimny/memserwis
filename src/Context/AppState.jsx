@@ -61,19 +61,6 @@ export const AppState = (props) => {
     });
     // voting handlers
 
-    // to działa
-    // const downVoteHandler = (id) => {
-    //     setMemes((prevState) => {
-    //         return prevState.map((mem) => {
-    //             if (mem.id === id) {
-    //                 if (mem.downVote === 0) {
-    //                     return {...mem, downVote: --mem.downVote};
-    //                 } else return {...mem, downVote: mem.downVote--};
-    //             } else return mem;
-    //         });
-    //     });
-    // };
-
     const downVoteHandler = (id) => {
         setMemes((prevState) => {
             return prevState.map((mem) => {
