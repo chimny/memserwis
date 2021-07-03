@@ -59,6 +59,7 @@ export const AppState = (props) => {
     const starMemes = memes.filter((meme) => {
         return meme.star;
     });
+
     // voting handlers
 
     const downVoteHandler = (id) => {
