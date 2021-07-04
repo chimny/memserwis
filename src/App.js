@@ -26,7 +26,7 @@ function App() {
         <div className="App">
             <AppState>
                 <ThemeProvider theme={theme}>
-                    <HashRouter>
+                    <HashRouter basename="/">
                         <Navigation />
                         <div>
                             <Switch>
