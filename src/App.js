@@ -25,30 +25,19 @@ function App() {
                         <Navigation />
                         <div>
                             <Switch>
-                                <Route
-                                    path={process.env.PUBLIC_URL + "/regular"}
-                                >
+                                <Route path={"/regular"}>
                                     <Regular />
                                 </Route>
-                                <Route path={process.env.PUBLIC_URL + "/hot"}>
+                                <Route path={"/hot"}>
                                     <Hot />
                                 </Route>
-                                <Route path={process.env.PUBLIC_URL + "/star"}>
+                                <Route path={"/star"}>
                                     <Star />
                                 </Route>
-                                <Route
-                                    exact
-                                    path={process.env.PUBLIC_URL + "/"}
-                                >
-                                    <Redirect
-                                        to={process.env.PUBLIC_URL + "/regular"}
-                                    />
+                                <Route exact path={"/"}>
+                                    <Redirect to={"/regular"} />
                                 </Route>
-                                <Route
-                                    path={
-                                        process.env.PUBLIC_URL + "/memCreator"
-                                    }
-                                >
+                                <Route path={"/memCreator"}>
                                     <MemCreator />
                                 </Route>
                                 <Route path="*">
