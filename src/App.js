@@ -21,7 +21,7 @@ function App() {
         <div className="App">
             <AppState>
                 <ThemeProvider theme={theme}>
-                    <Router basename={process.env.PUBLIC_URL}>
+                    <Router>
                         <Navigation />
                         <div>
                             <Switch>
