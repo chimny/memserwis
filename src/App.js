@@ -1,12 +1,7 @@
 import * as React from "react";
 
-import {
-    BrowserRouter as Router,
-    Route,
-    Switch,
-    Redirect,
-    HashRouter,
-} from "react-router-dom";
+import {HashRouter as Router, Route, Switch, Redirect} from "react-router-dom";
+
 // Routes
 import {Hot} from "./Components/Routes/Hot";
 import {Regular} from "./Components/Routes/Regular";
@@ -26,7 +21,7 @@ function App() {
         <div className="App">
             <AppState>
                 <ThemeProvider theme={theme}>
-                    <HashRouter basename="/">
+                    <Router basename={process.env.PUBLIC_URL}>
                         <Navigation />
                         <div>
                             <Switch>
@@ -50,7 +45,7 @@ function App() {
                                 </Route>
                             </Switch>
                         </div>
-                    </HashRouter>
+                    </Router>
 
                     <GlobalStyle />
                 </ThemeProvider>
