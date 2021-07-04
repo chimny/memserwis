@@ -1,8 +1,8 @@
 {
   "name": "memserwis",
   "version": "0.1.0",
-  "private": true,
-  "homepage": "http://chimny.github.io/memserwis",
+  "private": false,
+  "homepage": "http://chimny.github.io/memserwis/regular/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-brands-svg-icons": "^5.15.3",
