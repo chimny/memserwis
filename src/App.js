@@ -35,8 +35,7 @@ function App() {
                                     <Star />
                                 </Route>
                                 <Route exact path={"/"}>
-                                    {/* <Redirect to={"/regular"} /> */}
-                                    <Regular />
+                                    <Redirect to={"/regular"} />
                                 </Route>
                                 <Route path={"/memCreator"}>
                                     <MemCreator />
