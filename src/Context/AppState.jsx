@@ -93,8 +93,6 @@ export const AppState = (props) => {
                 if (mem.id === id) {
                     if (mem.upVote === 0) {
                         return {...mem, upVote: ++mem.upVote};
-                    } else if (mem.upVote > 0) {
-                        return {...mem, upVote: mem.upVote++};
                     }
                 }
                 return mem;
