@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/memserwis/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/memserwis/static/js/main.1b06a87f.chunk.js",
-    "main.js.map": "/memserwis/static/js/main.1b06a87f.chunk.js.map",
+    "main.js": "/memserwis/static/js/main.e50993d6.chunk.js",
+    "main.js.map": "/memserwis/static/js/main.e50993d6.chunk.js.map",
     "runtime-main.js": "/memserwis/static/js/runtime-main.66ba75d7.js",
     "runtime-main.js.map": "/memserwis/static/js/runtime-main.66ba75d7.js.map",
     "static/js/2.30f729f4.chunk.js": "/memserwis/static/js/2.30f729f4.chunk.js",
@@ -17,6 +17,6 @@
     "static/js/runtime-main.66ba75d7.js",
     "static/js/2.30f729f4.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.1b06a87f.chunk.js"
+    "static/js/main.e50993d6.chunk.js"
   ]
 }
