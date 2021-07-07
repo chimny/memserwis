@@ -66,7 +66,7 @@ export const AppState = (props) => {
         setMemes((prevState) => {
             return prevState.map((mem) => {
                 if (mem.id === id) {
-                    return {...mem, downVote: mem.downVote--};
+                    return {...mem, downVote: --mem.downVote};
                 } else return mem;
             });
         });
