@@ -77,17 +77,32 @@ export const AppState = (props) => {
         });
     };
 
+    // const upVoteHandler = (id) => {
+    //     setMemes((prevState) => {
+    //         return prevState.map((mem) => {
+    //             if (mem.id === id) {
+    //                 switch (mem.upVote) {
+    //                     case 0:
+    //                         return {...mem, upVote: ++mem.upVote};
+    //                     default:
+    //                         return {...mem, upVote: mem.upVote++};
+    //                 }
+    //             } else return mem;
+    //         });
+    //     });
+    // };
+
     const upVoteHandler = (id) => {
         setMemes((prevState) => {
             return prevState.map((mem) => {
                 if (mem.id === id) {
-                    switch (mem.upVote) {
-                        case 0:
-                            return {...mem, upVote: ++mem.upVote};
-                        default:
-                            return {...mem, upVote: mem.upVote++};
+                    if (mem.upVote === 0) {
+                        return {...mem, upVote: ++mem.upVote};
+                    } else if (mem.upVote > 0) {
+                        return {...mem, upVote: mem.upVote++};
                     }
-                } else return mem;
+                }
+                return mem;
             });
         });
     };
