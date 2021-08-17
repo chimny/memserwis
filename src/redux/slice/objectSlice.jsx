@@ -61,6 +61,7 @@ export const counterObject = createSlice({
                     : element;
             });
         },
+
         starElement: (state, action) => {
             const passedID = action.payload;
 
@@ -70,10 +71,16 @@ export const counterObject = createSlice({
                     : element;
             });
         },
+
+        addElement: (state, action) => {
+            const newMem = action.payload;
+
+            return [...state, newMem];
+        },
     },
 });
 
-export const {incrementElement, decreaseElement, starElement} =
+export const {incrementElement, decreaseElement, starElement, addElement} =
     counterObject.actions;
 
 export default counterObject.reducer;

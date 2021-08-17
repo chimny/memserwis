@@ -47,7 +47,7 @@ export const AppState = (props) => {
     });
 
     const [open, setOpen] = useState(false);
-    // routes rules
+    /* // routes rules
     const topMemes = memes.filter((meme) => {
         return meme.upVote + meme.downVote > 5;
     });
@@ -58,10 +58,10 @@ export const AppState = (props) => {
 
     const starMemes = memes.filter((meme) => {
         return meme.star;
-    });
+    }); */
 
-    // voting handlers
-
+    // voting handlers migrated
+    /* 
     const downVoteHandler = (id) => {
         setMemes((prevState) => {
             return prevState.map((mem) => {
@@ -99,22 +99,22 @@ export const AppState = (props) => {
             });
         });
     };
-
+ */
     return (
         <AppContext.Provider
             value={{
                 memes,
                 setMemes,
-                topMemes,
-                regularMemes,
-                starMemes,
+                // topMemes,
+                // regularMemes,
+                // starMemes,
                 open,
                 setOpen,
                 form,
                 setForm,
-                upVoteHandler,
-                downVoteHandler,
-                starHandler,
+                // upVoteHandler,
+                // downVoteHandler,
+                // starHandler,
             }}
         >
             {props.children}
