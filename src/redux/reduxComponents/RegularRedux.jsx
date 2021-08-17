@@ -1,13 +1,11 @@
 import React, {useContext} from "react";
 import {StyledRoute} from "../../Components/Routes/StyledRoute";
-import {Mem} from "../../Components/Mem/Mem";
+import {ReduxMem} from "./ReduxMem";
 
-import {useSelector, useDispatch} from "react-redux";
+import {useSelector} from "react-redux";
 // import {incrementElement, decreaseElement} from "../redux/slice/objectSlice";
 
 export const RegularRedux = () => {
-    // const dispatch = useDispatch();
-
     const count = useSelector((state) => state.valueObject);
     // const filteredValues = count.filter((element) => element.upVote > 5);
 
@@ -16,7 +14,7 @@ export const RegularRedux = () => {
             {count.map((mem) => {
                 const {name, downVote, upVote, id, imgSRC, star} = mem;
                 return (
-                    <Mem
+                    <ReduxMem
                         title={name}
                         upVote={upVote}
                         downVote={downVote}
@@ -30,7 +28,3 @@ export const RegularRedux = () => {
         </StyledRoute>
     );
 };
-
-// export const RegularRedux = () => {
-//     return <div>hello!</div>;
-// };

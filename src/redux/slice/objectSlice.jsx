@@ -61,9 +61,19 @@ export const counterObject = createSlice({
                     : element;
             });
         },
+        starElement: (state, action) => {
+            const passedID = action.payload;
+
+            return state.map((element) => {
+                return element.id === passedID
+                    ? {...element, star: !element.star}
+                    : element;
+            });
+        },
     },
 });
 
-export const {incrementElement, decreaseElement} = counterObject.actions;
+export const {incrementElement, decreaseElement, starElement} =
+    counterObject.actions;
 
 export default counterObject.reducer;
