@@ -75,7 +75,7 @@ export const counterObject = createSlice({
         addElement: (state, action) => {
             const newMem = action.payload;
 
-            return [...state, newMem];
+            return [newMem, ...state];
         },
     },
 });
