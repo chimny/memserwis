@@ -1,4 +1,4 @@
-import {StyledNavigation,StyledMenu} from "./StyledNavigation";
+import {StyledNavigation, StyledMenu} from "./StyledNavigation";
 import {useContext} from "react";
 import {AppContext} from "../../Context/AppContext";
 import {NavLink} from "react-router-dom";
@@ -30,6 +30,11 @@ export const Navigation = () => {
                     <li>
                         <NavLink to="/memCreator" activeClassName="active">
                             memCreator
+                        </NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/regularRedux" activeClassName="active">
+                            regularRedux
                         </NavLink>
                     </li>
                 </ul>

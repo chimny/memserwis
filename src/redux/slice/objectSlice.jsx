@@ -3,16 +3,36 @@ import {v4 as uuidv4} from "uuid";
 
 const initialState = [
     {
-        value: 2,
-        id: uuidv4(),
+        name: "mem1",
+        upVote: 0,
+        downVote: 0,
+        id: `${uuidv4()}`,
+        imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/t7OC4YmUU65nB9Rs.jpg",
+        star: true,
     },
     {
-        value: 4,
-        id: uuidv4(),
+        name: "mem2",
+        upVote: 7,
+        downVote: 0,
+        id: `${uuidv4()}`,
+        imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/1qEHO1byIHfoThhb.jpg",
+        star: false,
     },
     {
-        value: 8,
-        id: uuidv4(),
+        name: "mem3",
+        upVote: 0,
+        downVote: 0,
+        id: `${uuidv4()}`,
+        imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/tzgTaBd1Kvs6aMh7.jpg",
+        star: true,
+    },
+    {
+        name: "mem4",
+        upVote: 0,
+        downVote: 0,
+        id: `${uuidv4()}`,
+        imgSRC: "https://i1.kwejk.pl/k/obrazki/2021/05/8AQqXgqpZ6PVrzDi.jpg",
+        star: true,
     },
 ];
 
@@ -26,7 +46,7 @@ export const counterObject = createSlice({
 
             return state.map((element) => {
                 return element.id === passedID
-                    ? {...element, value: element.value + incrementValue}
+                    ? {...element, upVote: element.upVote + incrementValue}
                     : element;
             });
         },
@@ -37,7 +57,7 @@ export const counterObject = createSlice({
 
             return state.map((element) => {
                 return element.id === passedID
-                    ? {...element, value: element.value - decreasetValue}
+                    ? {...element, downVote: element.downVote - decreasetValue}
                     : element;
             });
         },
