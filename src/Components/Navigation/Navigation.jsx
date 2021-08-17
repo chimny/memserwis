@@ -32,11 +32,6 @@ export const Navigation = () => {
                             memCreator
                         </NavLink>
                     </li>
-                    <li>
-                        <NavLink to="/regularRedux" activeClassName="active">
-                            regularRedux
-                        </NavLink>
-                    </li>
                 </ul>
             </StyledNavigation>
         </StyledMenu>

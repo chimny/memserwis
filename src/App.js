@@ -15,7 +15,6 @@ import {GlobalStyle} from "./GlobalStyles/GlobalStyle";
 import {Navigation} from "./Components/Navigation/Navigation";
 import {ThemeProvider} from "styled-components";
 import {theme} from "./GlobalStyles/theme";
-import {RegularRedux} from "./redux/reduxComponents/RegularRedux";
 
 function App() {
     return (
@@ -40,9 +39,6 @@ function App() {
                                 </Route>
                                 <Route path={"/memCreator"}>
                                     <MemCreator />
-                                </Route>
-                                <Route path={"/regularRedux"}>
-                                    <RegularRedux />
                                 </Route>
                                 <Route path="*">
                                     <PageNotFound />

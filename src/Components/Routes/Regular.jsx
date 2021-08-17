@@ -1,14 +1,16 @@
-import React, {useContext} from "react";
-import {AppContext} from "../../Context/AppContext";
+import {StyledRoute} from "../../Components/Routes/StyledRoute";
 import {Mem} from "../Mem/Mem";
-import { StyledRoute } from "./StyledRoute";
+import {useSelector} from "react-redux";
 
 export const Regular = () => {
-    const {regularMemes} = useContext(AppContext);
+    const count = useSelector((state) => state.valueObject);
+    const filteredValues = count.filter(
+        (element) => element.upVote + element.downVote <= 5
+    );
 
     return (
         <StyledRoute>
-            {regularMemes.map((mem) => {
+            {filteredValues.map((mem) => {
                 const {name, downVote, upVote, id, imgSRC, star} = mem;
                 return (
                     <Mem
