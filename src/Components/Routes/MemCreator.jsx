@@ -25,7 +25,6 @@ export const MemCreator = () => {
             star: false,
         };
         dispatch(addElement(NewMem));
-
         alert("dodano nowy mem");
     };
 
@@ -44,14 +43,14 @@ export const MemCreator = () => {
                     placeholder="Title"
                     id="title"
                     value={form.title}
-                    onChange={(e) => dispatch(memCreatorTitle(e))}
+                    onChange={(e) => dispatch(memCreatorTitle(e.target.value))}
                 />
                 <input
                     type="text"
                     placeholder="IMG SRC (enter URL)"
                     id="imgSrc"
                     value={form.imgSRC}
-                    onChange={(e) => dispatch(memCreatorUrl(e))}
+                    onChange={(e) => dispatch(memCreatorUrl(e.target.value))}
                 />
                 <button>add mem</button>
             </StyledForm>

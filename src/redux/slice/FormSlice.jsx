@@ -1,8 +1,8 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    title: "test",
-    imgSRC: "test",
+    title: "",
+    imgSRC: "",
 };
 
 export const formSlice = createSlice({
@@ -11,11 +11,11 @@ export const formSlice = createSlice({
     reducers: {
         memCreatorTitle: (state, action) => {
             const memTitle = action.payload;
-            return {...state, title: memTitle.target};
+            return {...state, title: `${memTitle}`};
         },
         memCreatorUrl: (state, action) => {
             const memUrl = action.payload;
-            return {...state, imgSRC: memUrl.target.value};
+            return {...state, imgSRC: memUrl};
         },
         clearForm: (state) => {
             return {
