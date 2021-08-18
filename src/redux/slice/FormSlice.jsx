@@ -1,22 +1,31 @@
 import {createSlice} from "@reduxjs/toolkit";
 
 const initialState = {
-    title: "",
-    imgSRC: "",
+    title: "test",
+    imgSRC: "test",
 };
 
-export const FormSlice = createSlice({
-    name: "FormSlice",
+export const formSlice = createSlice({
+    name: "form",
     initialState,
     reducers: {
-        addElement: (state, action) => {
-            const newMem = action.payload;
-
-            return [newMem, ...state];
+        memCreatorTitle: (state, action) => {
+            const memTitle = action.payload;
+            return {...state, title: memTitle.target.value};
+        },
+        memCreatorUrl: (state, action) => {
+            const memUrl = action.payload;
+            return {...state, imgSRC: memUrl.target.value};
+        },
+        clearForm: (state) => {
+            return {
+                title: "",
+                imgSRC: "",
+            };
         },
     },
 });
 
-export const {addElement} = FormSlice.actions;
+export const {memCreatorTitle, memCreatorUrl, clearForm} = formSlice.actions;
 
-export default FormSlice.reducer;
+export default formSlice.reducer;

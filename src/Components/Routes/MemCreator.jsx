@@ -1,16 +1,19 @@
 import uuid from "react-uuid";
-import React, {useContext} from "react";
-import {AppContext} from "../../Context/AppContext";
 import {StyledRoute, StyledForm} from "./StyledRoute";
-import {useDispatch} from "react-redux";
+// redux
+import {useDispatch, useSelector} from "react-redux";
 import {addElement} from "../../redux/slice/objectSlice";
+import {
+    memCreatorTitle,
+    memCreatorUrl,
+    clearForm,
+} from "../../redux/slice/formSlice";
 
 export const MemCreator = () => {
-    // const {setMemes, form, setForm} = useContext(AppContext);
-    const {form, setForm} = useContext(AppContext);
-
     // redux
     const dispatch = useDispatch();
+
+    const form = useSelector((state) => state.form);
 
     const NewMemHandler = (name, imgSrc) => {
         const NewMem = {
@@ -29,7 +32,7 @@ export const MemCreator = () => {
     const createMemHandler = (e) => {
         e.preventDefault();
         NewMemHandler(form.title, form.imgSRC);
-        setForm({title: "", imgSRC: ""});
+        dispatch(clearForm());
     };
 
     return (
@@ -41,14 +44,14 @@ export const MemCreator = () => {
                     placeholder="Title"
                     id="title"
                     value={form.title}
-                    onChange={(e) => setForm({...form, title: e.target.value})}
+                    onChange={(e) => dispatch(memCreatorTitle(e))}
                 />
                 <input
                     type="text"
                     placeholder="IMG SRC (enter URL)"
                     id="imgSrc"
                     value={form.imgSRC}
-                    onChange={(e) => setForm({...form, imgSRC: e.target.value})}
+                    onChange={(e) => dispatch(memCreatorUrl(e))}
                 />
                 <button>add mem</button>
             </StyledForm>
