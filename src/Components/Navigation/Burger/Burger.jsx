@@ -1,20 +1,21 @@
-import React, {useContext} from "react";
-
-import {AppContext} from "../../../Context/AppContext";
 import {StyledBurger} from "./StyledBurger";
 
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
 
-export const Burger = () => {
-    const {open, setOpen} = useContext(AppContext);
+import {clickedBurger} from "../../../redux/slice/burgerSlice";
+import {useSelector, useDispatch} from "react-redux";
 
-    const openHandler = () => {
-        setOpen((openState) => !openState);
-    };
+export const Burger = () => {
+    const burgerStatus = useSelector((state) => state.burger);
+
+    const dispatch = useDispatch();
 
     return (
-        <StyledBurger onClick={openHandler} open={open}>
+        <StyledBurger
+            onClick={() => dispatch(clickedBurger)}
+            open={burgerStatus}
+        >
             {<FontAwesomeIcon icon={faBars} />}
         </StyledBurger>
     );

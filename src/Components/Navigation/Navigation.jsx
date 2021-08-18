@@ -1,16 +1,15 @@
 import {StyledNavigation, StyledMenu} from "./StyledNavigation";
-import {useContext} from "react";
-import {AppContext} from "../../Context/AppContext";
 import {NavLink} from "react-router-dom";
 import {Burger} from "./Burger/Burger";
+import {useSelector} from "react-redux";
 
 export const Navigation = () => {
-    const {open} = useContext(AppContext);
+    const burgerStatus = useSelector((state) => state.burger);
 
     return (
         <StyledMenu>
             <Burger />
-            <StyledNavigation open={open}>
+            <StyledNavigation open={burgerStatus}>
                 <ul>
                     <li>
                         <NavLink to="/regular" activeClassName="active">
