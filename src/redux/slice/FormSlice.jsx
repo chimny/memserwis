@@ -11,7 +11,7 @@ export const formSlice = createSlice({
     reducers: {
         memCreatorTitle: (state, action) => {
             const memTitle = action.payload;
-            return {...state, title: memTitle.target.value};
+            return {...state, title: memTitle.target};
         },
         memCreatorUrl: (state, action) => {
             const memUrl = action.payload;

@@ -1,13 +1,14 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const initialState = false;
+const initialState = true;
 
 export const burgerSlice = createSlice({
     name: "burger",
     initialState,
     reducers: {
-        clickedBurger: (state) => {
-            return !state;
+        clickedBurger: (state, action) => {
+            const update = !action.payload;
+            return update;
         },
     },
 });

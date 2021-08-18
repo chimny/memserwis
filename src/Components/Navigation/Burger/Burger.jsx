@@ -12,7 +12,8 @@ export const Burger = () => {
 
     return (
         <StyledBurger
-            onClick={() => dispatch(clickedBurger)}
+            onClick={() => dispatch(clickedBurger(burgerStatus))}
+            // onClick={testFunction}
             open={burgerStatus}
         >
             {<FontAwesomeIcon icon={faBars} />}
