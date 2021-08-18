@@ -1,22 +1,19 @@
 {
   "files": {
-    "main.css": "/memserwis/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/memserwis/static/js/main.1428ba96.chunk.js",
-    "main.js.map": "/memserwis/static/js/main.1428ba96.chunk.js.map",
+    "main.js": "/memserwis/static/js/main.d5f559b0.chunk.js",
+    "main.js.map": "/memserwis/static/js/main.d5f559b0.chunk.js.map",
     "runtime-main.js": "/memserwis/static/js/runtime-main.66ba75d7.js",
     "runtime-main.js.map": "/memserwis/static/js/runtime-main.66ba75d7.js.map",
-    "static/js/2.f39d20fb.chunk.js": "/memserwis/static/js/2.f39d20fb.chunk.js",
-    "static/js/2.f39d20fb.chunk.js.map": "/memserwis/static/js/2.f39d20fb.chunk.js.map",
+    "static/js/2.e16aa85c.chunk.js": "/memserwis/static/js/2.e16aa85c.chunk.js",
+    "static/js/2.e16aa85c.chunk.js.map": "/memserwis/static/js/2.e16aa85c.chunk.js.map",
     "static/js/3.c90da8ee.chunk.js": "/memserwis/static/js/3.c90da8ee.chunk.js",
     "static/js/3.c90da8ee.chunk.js.map": "/memserwis/static/js/3.c90da8ee.chunk.js.map",
     "index.html": "/memserwis/index.html",
-    "static/css/main.6dea0f05.chunk.css.map": "/memserwis/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.f39d20fb.chunk.js.LICENSE.txt": "/memserwis/static/js/2.f39d20fb.chunk.js.LICENSE.txt"
+    "static/js/2.e16aa85c.chunk.js.LICENSE.txt": "/memserwis/static/js/2.e16aa85c.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.66ba75d7.js",
-    "static/js/2.f39d20fb.chunk.js",
-    "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.1428ba96.chunk.js"
+    "static/js/2.e16aa85c.chunk.js",
+    "static/js/main.d5f559b0.chunk.js"
   ]
 }
