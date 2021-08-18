@@ -8,7 +8,6 @@ import {useSelector, useDispatch} from "react-redux";
 
 export const Burger = () => {
     const burgerStatus = useSelector((state) => state.burger);
-
     const dispatch = useDispatch();
 
     return (

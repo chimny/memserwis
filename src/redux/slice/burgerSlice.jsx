@@ -1,15 +1,13 @@
 import {createSlice} from "@reduxjs/toolkit";
 
-const initialState = {
-    open: false,
-};
+const initialState = false;
 
 export const burgerSlice = createSlice({
     name: "burger",
     initialState,
     reducers: {
         clickedBurger: (state) => {
-            return {open: !state.open};
+            return !state;
         },
     },
 });
