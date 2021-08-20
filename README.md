@@ -1,7 +1,7 @@
 # MemSerwis
 
 React-based app with memes stored by arrary which includes basic information (img url, title, upVotes, downvotes, and star).
-Data flow is managed via useContext hook (all global states can be found in Context folder)
+Data flow is managed via Redux
 
 
 ## Used technology
@@ -9,6 +9,7 @@ Data flow is managed via useContext hook (all global states can be found in Cont
 * React-router (5.2.0)
 * Styled-components (5.3.0)
 * FontAwesome (5.15.3)
+* React-router (7.2.4)
 
 ## How it works
 * Memes which diference between upVotes and downVotes is greater than 5 are moved to Hot Route
