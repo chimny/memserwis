@@ -1,7 +1,7 @@
 # MemSerwis
 
 React-based app with memes stored by arrary which includes basic information (img url, title, upVotes, downvotes, and star).
-Data flow is managed via Redux
+Data flow is managed via Redux.
 
 ## Live preview
 
